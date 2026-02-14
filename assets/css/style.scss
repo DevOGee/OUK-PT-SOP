@@ -1,52 +1,60 @@
 --- --- @import "{{ site.theme }}";
 
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap');
+
 /* OUK Colors */
 $ouk-gold: #ff7f50;
 $ouk-teal: #037b90;
 $ouk-white: #ffffff;
 $ouk-light-gray: #f4f7f6;
-$ouk-dark-text: #2c3e50;
+$ouk-dark-text: #333333;
+$ouk-card-bg: #ffffff;
 
-/* Global Typography & Background */
+/* Global Resets & Typography */
 body {
     color: $ouk-dark-text;
-    background-color: $ouk-white;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    /* Slightly darker background for card contrast */
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
 }
 
 /* Header Styling */
 .page-header {
     background-color: $ouk-teal;
-    background-image: linear-gradient(120deg, $ouk-teal, darken($ouk-teal, 10%));
+    background-image: linear-gradient(135deg, $ouk-teal 0%, darken($ouk-teal, 15%) 100%);
     color: $ouk-white;
+    padding: 4rem 2rem;
+    text-align: center;
+    margin-bottom: 0;
+    /* Remove bottom margin to flush with content */
 }
 
 .project-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
     color: $ouk-gold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    letter-spacing: -0.02em;
 }
 
 .project-tagline {
-    color: rgba($ouk-white, 0.9);
-}
-
-/* Button Styling (Header & General) */
-.btn {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: $ouk-white;
-    font-weight: 600;
-
-    &:hover {
-        background-color: $ouk-gold;
-        border-color: $ouk-gold;
-        color: $ouk-white;
-        text-decoration: none;
-    }
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: rgba($ouk-white, 0.95);
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* Main Content Styling */
 .main-content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
 
     /* Headings */
     h1,
@@ -55,112 +63,212 @@ body {
     h4,
     h5,
     h6 {
+        font-family: 'Poppins', sans-serif;
         color: $ouk-teal;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
+        margin-top: 0;
     }
 
-    h1,
+    /* Target specific H2s that act as section headers */
     h2 {
-        border-bottom: 2px solid rgba($ouk-gold, 0.3);
-        padding-bottom: 0.5rem;
+        font-weight: 700;
+        font-size: 1.8rem;
+        border-bottom: 3px solid $ouk-gold;
+        display: inline-block;
+        padding-bottom: 5px;
+        margin-bottom: 1.5rem;
+        margin-top: 2rem;
     }
 
     /* Links */
     a {
         color: $ouk-teal;
-        /* Default link color to teal for readability */
         font-weight: 600;
+        transition: color 0.2s ease;
 
         &:hover {
             color: $ouk-gold;
-            text-decoration: underline;
+            text-decoration: none;
         }
     }
 
-    /* Lists */
-    ul,
+    /* Card-like Sections (Creating effective 'cards' from markdown is tricky without HTML divs, 
+       but we can style the elements to feel cleaner) */
+
+    /* Strong tags styling (often used for sub-headers in this doc) */
+    strong {
+        color: darken($ouk-teal, 10%);
+        font-weight: 700;
+    }
+
+    /* Lists - The Checklist Look */
+    ul {
+        list-style: none;
+        /* Remove default bullets */
+        padding-left: 0;
+        margin-top: 1rem;
+
+        li {
+            position: relative;
+            padding: 1rem 1rem 1rem 2.5rem;
+            margin-bottom: 0.8rem;
+            background-color: $ouk-white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border-left: 4px solid transparent;
+
+            &::before {
+                content: "✓";
+                /* Checkmark */
+                position: absolute;
+                left: 1rem;
+                top: 1rem;
+                color: $ouk-gold;
+                font-weight: bold;
+                font-size: 1.2em;
+            }
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-left: 4px solid $ouk-gold;
+            }
+        }
+    }
+
+    /* Numbered Lists */
     ol {
+        padding-left: 1.5rem;
+
         li {
             margin-bottom: 0.5rem;
+            padding-left: 0.5rem;
 
             &::marker {
-                color: $ouk-gold;
+                color: $ouk-teal;
+                font-weight: bold;
             }
         }
     }
 
     /* Blockquotes */
     blockquote {
-        border-left: 0.5rem solid $ouk-gold;
-        color: lighten($ouk-dark-text, 10%);
-        background-color: $ouk-light-gray;
-        padding: 1rem;
+        border-left: 5px solid $ouk-gold;
+        color: #555;
+        background-color: white;
+        padding: 1.5rem;
+        border-radius: 0 8px 8px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         font-style: italic;
-    }
-
-    /* Code Blocks */
-    pre,
-    code {
-        background-color: $ouk-light-gray;
-        border-radius: 4px;
-        color: $ouk-teal;
+        margin: 2rem 0;
     }
 
     /* Tables */
     table {
         width: 100%;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
+        border-collapse: separate;
+        border-spacing: 0;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
         th {
             background-color: $ouk-teal;
             color: $ouk-white;
-            border: 1px solid darken($ouk-teal, 5%);
+            padding: 1rem;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            border: none;
         }
 
         td {
-            border: 1px solid #ddd;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            background-color: white;
         }
 
-        tr:nth-child(even) {
-            background-color: $ouk-light-gray;
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #fafafa;
         }
     }
 
     /* Images */
     img {
         max-width: 300px;
-        /* Limit width to be proportionate */
         width: 100%;
         height: auto;
         display: block;
-        margin: 1.5rem auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        border: 2px solid $ouk-gold;
-        /* Add a subtle gold border */
+        margin: 2rem auto;
+        border-radius: 50%;
+        /* Make logo circular if square, or just rounded */
+        border-radius: 12px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        border: 4px solid white;
     }
 
     /* Horizontal Rules */
     hr {
         border: 0;
-        border-top: 2px solid rgba($ouk-gold, 0.3);
-        margin: 2rem 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba($ouk-gold, 0.75), rgba(0, 0, 0, 0));
+        margin: 3rem 0;
     }
 }
 
 /* Footer Styling */
 .site-footer {
-    background-color: $ouk-light-gray;
-    border-top: 3px solid $ouk-gold;
-    padding: 2rem 0;
-    margin-top: 4rem;
+    background-color: darken($ouk-teal, 15%);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 3rem 0;
+    text-align: center;
+    margin-top: 0;
 
     .site-footer-owner {
-        color: $ouk-teal;
+        color: $ouk-white;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 0.5rem;
     }
 
     .site-footer-credits {
-        color: lighten($ouk-dark-text, 30%);
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.9rem;
+    }
+
+    a {
+        color: $ouk-gold;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            color: lighten($ouk-gold, 10%);
+        }
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .page-header {
+        padding: 3rem 1rem;
+    }
+
+    .project-name {
+        font-size: 2rem;
+    }
+
+    .main-content {
+        padding: 1.5rem;
+
+        ul li {
+            padding: 1rem;
+            padding-left: 2.5rem;
+            /* keep room for checkmark */
+        }
     }
 }
