@@ -1,4 +1,4 @@
-## ![](./media/image1.png){width="1.9225109361329833in" height="1.0406255468066492in"}
+![OUK Header](./media/image1.png)
 
 ## **PART-TIME LECTURERS -- STANDARD OPERATING PROCEDURE (SOP-CHECK LIST)**
 

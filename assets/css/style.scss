@@ -1,0 +1,63 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* OUK Colors */
+$ouk-gold: #ff7f50;
+$ouk-teal: #037b90;
+$ouk-white: #ffffff;
+
+/* Header Styling */
+.page-header {
+  background-color: $ouk-teal;
+  background-image: linear-gradient(120deg, $ouk-teal, darken($ouk-teal, 10%));
+  color: $ouk-white;
+}
+
+.project-name {
+    color: $ouk-gold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.project-tagline {
+    color: rgba($ouk-white, 0.9);
+}
+
+/* Button Styling in Header */
+.btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: $ouk-white;
+    
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.4);
+        border-color: rgba(255, 255, 255, 0.4);
+        color: $ouk-white;
+    }
+}
+
+/* Content Styling */
+.main-content {
+    h1, h2, h3, h4, h5, h6 {
+        color: $ouk-teal;
+    }
+
+    a {
+        color: $ouk-gold;
+        &:hover {
+            color: darken($ouk-gold, 10%);
+            text-decoration: underline;
+        }
+    }
+    
+    /* Make the image responsive and centered */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+}
