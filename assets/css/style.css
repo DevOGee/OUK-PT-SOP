@@ -1,0 +1,226 @@
+/* Import Playful Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap');
+
+:root {
+    --cute-peach: #ffb4a2;
+    /* Softer coral */
+    --cute-mint: #6ec1bd;
+    /* Fresh, friendly teal */
+    --cute-cream: #fff9f5;
+    /* Warm off-white */
+    --cute-pink: #ff85a1;
+    /* For accents/hearts */
+    --cute-text: #4a4e69;
+    /* Soft charcoal-purple */
+    --white: #ffffff;
+    --dark-mint: #5aa19d;
+    /* Darker version for gradient end */
+    --darker-pink: #e66a85;
+    /* Darker version for hover */
+}
+
+/* Global Resets & Typography */
+body {
+    color: var(--cute-text);
+    background-color: #fcf6f5;
+    /* Very soft blush background */
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.7;
+    margin: 0;
+    /* Removing default margin */
+}
+
+/* Header Styling - Bubbly & Bright */
+.page-header {
+    background: linear-gradient(135deg, var(--cute-mint) 0%, var(--dark-mint) 100%);
+    color: var(--white);
+    padding: 5rem 2rem;
+    text-align: center;
+    border-bottom: 8px solid var(--cute-peach);
+    border-radius: 0 0 50px 50px;
+    /* Big rounded bottom */
+}
+
+.project-name {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: var(--white);
+    text-shadow: 3px 3px 0px rgba(255, 180, 162, 0.5);
+    /* using rgba equivalent of cute-peach */
+    font-size: 3rem;
+    letter-spacing: -0.01em;
+    margin: 0;
+}
+
+.project-tagline {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+}
+
+/* Main Content Styling */
+.main-content {
+    max-width: 880px;
+    margin: -30px auto 30px;
+    /* Pull content up into the header slightly, added bottom margin */
+    padding: 2.5rem;
+    background: var(--white);
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3 {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--cute-mint);
+}
+
+.main-content h2 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    background: rgba(255, 180, 162, 0.15);
+    /* rgba of cute-peach */
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 2.5rem;
+    border-bottom: none;
+}
+
+/* Bubbly Links */
+.main-content a {
+    color: var(--cute-pink);
+    text-decoration: none;
+    border-bottom: 2px dashed var(--cute-pink);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.main-content a:hover {
+    color: var(--darker-pink);
+    padding: 0 5px;
+    background: rgba(255, 133, 161, 0.1);
+    /* rgba of cute-pink */
+    border-radius: 5px;
+}
+
+/* Floating Card Lists */
+.main-content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.main-content ul li {
+    position: relative;
+    padding: 1.2rem 1.2rem 1.2rem 3.5rem;
+    margin-bottom: 1rem;
+    background-color: var(--cute-cream);
+    border-radius: 18px;
+    /* Extra round */
+    box-shadow: 0 4px 0px rgba(110, 193, 189, 0.1);
+    /* rgba of cute-mint */
+    transition: all 0.3s ease;
+    animation: popIn 0.4s ease-out forwards;
+}
+
+.main-content ul li::before {
+    content: "✨";
+    /* Cute emoji bullet */
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+}
+
+.main-content ul li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(110, 193, 189, 0.15);
+    /* rgba of cute-mint */
+    background-color: var(--white);
+}
+
+/* Soft Blockquotes */
+.main-content blockquote {
+    border-left: 8px solid var(--cute-peach);
+    background-color: #fff9f5;
+    padding: 1.5rem;
+    border-radius: 20px;
+    color: var(--cute-text);
+    /* slightly lightened usually */
+    font-style: italic;
+    margin: 2.5rem 0;
+}
+
+/* Rounder Tables */
+.main-content table {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid var(--cute-cream);
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 1rem;
+}
+
+.main-content th {
+    background-color: var(--cute-peach);
+    font-family: 'Quicksand', sans-serif;
+    color: var(--white);
+    padding: 1.2rem;
+    text-align: left;
+}
+
+.main-content td {
+    padding: 1rem;
+    background: var(--white);
+    border-bottom: 1px solid var(--cute-cream);
+}
+
+/* Cute Image Style */
+.main-content img {
+    border-radius: 30px;
+    border: 6px solid var(--cute-cream);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.5s ease;
+    max-width: 100%;
+    height: auto;
+}
+
+.main-content img:hover {
+    transform: rotate(2deg) scale(1.05);
+}
+
+/* Footer Styling */
+.site-footer {
+    padding: 4rem 0;
+    background: none;
+    color: var(--cute-text);
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.site-footer a {
+    color: var(--cute-mint);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Bouncy Animation */
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    70% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
