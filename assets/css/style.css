@@ -28,6 +28,8 @@ body {
     line-height: 1.7;
     margin: 0;
     /* Removing default margin */
+    overflow-x: hidden;
+    /* Prevent scrollbar from entrance animations */
 }
 
 /* Header Styling - Bubbly & Bright */
@@ -39,6 +41,8 @@ body {
     border-bottom: 8px solid var(--cute-peach);
     border-radius: 0 0 50px 50px;
     /* Big rounded bottom */
+    position: relative;
+    z-index: 10;
 }
 
 .project-name {
@@ -50,6 +54,7 @@ body {
     font-size: 3rem;
     letter-spacing: -0.01em;
     margin: 0;
+    animation: bounceInDown 1s ease-out;
 }
 
 .project-tagline {
@@ -58,6 +63,9 @@ body {
     color: rgba(255, 255, 255, 0.9);
     font-size: 1.3rem;
     margin-top: 0.5rem;
+    animation: fadeIn 1.5s ease-out 0.5s forwards;
+    opacity: 0;
+    /* Start invisible for delay */
 }
 
 /* Main Content Styling */
@@ -69,6 +77,15 @@ body {
     background: var(--white);
     border-radius: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    position: relative;
+    z-index: 20;
+    animation: slideInUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+/* Subtle floating animation for the main card after it slides in */
+.main-content:hover {
+    animation: float 6s ease-in-out infinite;
 }
 
 .main-content h1,
@@ -88,6 +105,11 @@ body {
     display: inline-block;
     margin-top: 2.5rem;
     border-bottom: none;
+    transition: transform 0.3s ease;
+}
+
+.main-content h2:hover {
+    transform: scale(1.02) rotate(-1deg);
 }
 
 /* Bubbly Links */
@@ -107,11 +129,15 @@ body {
 }
 
 /* Floating Card Lists */
-.main-content ul {
-    list-style: none;
+.main-content ul,
+.main-content ol {
+    margin-top: 1.5rem;
     padding-left: 0;
+    list-style: none;
+    /* Remove default bullets for OL too if we want same style */
 }
 
+/* Re-applying list styles to OL as well if needed, or keeping UL specific */
 .main-content ul li {
     position: relative;
     padding: 1.2rem 1.2rem 1.2rem 3.5rem;
@@ -122,7 +148,9 @@ body {
     box-shadow: 0 4px 0px rgba(110, 193, 189, 0.1);
     /* rgba of cute-mint */
     transition: all 0.3s ease;
-    animation: popIn 0.4s ease-out forwards;
+    opacity: 0;
+    /* Start hidden for staggered animation */
+    animation: popIn 0.5s ease-out forwards;
 }
 
 .main-content ul li::before {
@@ -136,11 +164,41 @@ body {
 }
 
 .main-content ul li:hover {
-    transform: scale(1.02);
+    transform: scale(1.02) translateX(5px);
     box-shadow: 0 6px 15px rgba(110, 193, 189, 0.15);
     /* rgba of cute-mint */
     background-color: var(--white);
 }
+
+/* Staggered delay for list items */
+.main-content li:nth-child(1) {
+    animation-delay: 0.4s;
+}
+
+.main-content li:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.main-content li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.main-content li:nth-child(4) {
+    animation-delay: 0.7s;
+}
+
+.main-content li:nth-child(5) {
+    animation-delay: 0.8s;
+}
+
+.main-content li:nth-child(6) {
+    animation-delay: 0.9s;
+}
+
+.main-content li:nth-child(n+7) {
+    animation-delay: 1.0s;
+}
+
 
 /* Soft Blockquotes */
 .main-content blockquote {
@@ -152,6 +210,11 @@ body {
     /* slightly lightened usually */
     font-style: italic;
     margin: 2.5rem 0;
+    transition: transform 0.3s ease;
+}
+
+.main-content blockquote:hover {
+    transform: scale(1.02);
 }
 
 /* Rounder Tables */
@@ -187,6 +250,8 @@ body {
     transition: transform 0.5s ease;
     max-width: 100%;
     height: auto;
+    animation: fadeIn 1s ease-out 0.5s forwards;
+    opacity: 0;
 }
 
 .main-content img:hover {
@@ -200,6 +265,8 @@ body {
     color: var(--cute-text);
     text-align: center;
     font-family: 'Quicksand', sans-serif;
+    animation: fadeIn 1s ease-out 1.2s forwards;
+    opacity: 0;
 }
 
 .site-footer a {
@@ -208,19 +275,85 @@ body {
     text-decoration: none;
 }
 
-/* Bouncy Animation */
+/* --- Animations --- */
+
+/* Pop In */
 @keyframes popIn {
     0% {
         opacity: 0;
-        transform: scale(0.9);
+        transform: scale(0.9) translateY(10px);
     }
 
     70% {
-        transform: scale(1.05);
+        transform: scale(1.02);
     }
 
     100% {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide In Up */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Bounce In Down */
+@keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(25px);
+    }
+
+    75% {
+        transform: translateY(-10px);
+    }
+
+    90% {
+        transform: translateY(5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Gentle Float */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(0px);
     }
 }
