@@ -4,6 +4,15 @@
 $ouk-gold: #ff7f50;
 $ouk-teal: #037b90;
 $ouk-white: #ffffff;
+$ouk-light-gray: #f4f7f6;
+$ouk-dark-text: #2c3e50;
+
+/* Global Typography & Background */
+body {
+    color: $ouk-dark-text;
+    background-color: $ouk-white;
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 /* Header Styling */
 .page-header {
@@ -21,22 +30,25 @@ $ouk-white: #ffffff;
     color: rgba($ouk-white, 0.9);
 }
 
-/* Button Styling in Header */
+/* Button Styling (Header & General) */
 .btn {
     background-color: rgba(255, 255, 255, 0.2);
     border-color: rgba(255, 255, 255, 0.2);
     color: $ouk-white;
+    font-weight: 600;
 
     &:hover {
-        background-color: rgba(255, 255, 255, 0.4);
-        border-color: rgba(255, 255, 255, 0.4);
+        background-color: $ouk-gold;
+        border-color: $ouk-gold;
         color: $ouk-white;
+        text-decoration: none;
     }
 }
 
-/* Content Styling */
+/* Main Content Styling */
 .main-content {
 
+    /* Headings */
     h1,
     h2,
     h3,
@@ -44,26 +56,111 @@ $ouk-white: #ffffff;
     h5,
     h6 {
         color: $ouk-teal;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
     }
 
+    h1,
+    h2 {
+        border-bottom: 2px solid rgba($ouk-gold, 0.3);
+        padding-bottom: 0.5rem;
+    }
+
+    /* Links */
     a {
-        color: $ouk-gold;
+        color: $ouk-teal;
+        /* Default link color to teal for readability */
+        font-weight: 600;
 
         &:hover {
-            color: darken($ouk-gold, 10%);
+            color: $ouk-gold;
             text-decoration: underline;
         }
     }
 
-    /* Make the image responsive and centered */
+    /* Lists */
+    ul,
+    ol {
+        li {
+            margin-bottom: 0.5rem;
+
+            &::marker {
+                color: $ouk-gold;
+            }
+        }
+    }
+
+    /* Blockquotes */
+    blockquote {
+        border-left: 0.5rem solid $ouk-gold;
+        color: lighten($ouk-dark-text, 10%);
+        background-color: $ouk-light-gray;
+        padding: 1rem;
+        font-style: italic;
+    }
+
+    /* Code Blocks */
+    pre,
+    code {
+        background-color: $ouk-light-gray;
+        border-radius: 4px;
+        color: $ouk-teal;
+    }
+
+    /* Tables */
+    table {
+        width: 100%;
+        margin-bottom: 1.5rem;
+
+        th {
+            background-color: $ouk-teal;
+            color: $ouk-white;
+            border: 1px solid darken($ouk-teal, 5%);
+        }
+
+        td {
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) {
+            background-color: $ouk-light-gray;
+        }
+    }
+
+    /* Images */
     img {
         max-width: 300px;
         /* Limit width to be proportionate */
         width: 100%;
         height: auto;
         display: block;
-        margin: 0 auto;
+        margin: 1.5rem auto;
         border-radius: 8px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 2px solid $ouk-gold;
+        /* Add a subtle gold border */
+    }
+
+    /* Horizontal Rules */
+    hr {
+        border: 0;
+        border-top: 2px solid rgba($ouk-gold, 0.3);
+        margin: 2rem 0;
+    }
+}
+
+/* Footer Styling */
+.site-footer {
+    background-color: $ouk-light-gray;
+    border-top: 3px solid $ouk-gold;
+    padding: 2rem 0;
+    margin-top: 4rem;
+
+    .site-footer-owner {
+        color: $ouk-teal;
+    }
+
+    .site-footer-credits {
+        color: lighten($ouk-dark-text, 30%);
     }
 }
