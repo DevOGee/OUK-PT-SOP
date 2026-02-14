@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    /* Professional Palette - Navy, Slate, Clean White */
-    --primary-color: #2c3e50;
-    /* Midnight Blue */
-    --secondary-color: #34495e;
-    /* Wet Asphalt */
-    --accent-color: #2980b9;
-    /* Belize Hole Blue */
+    /* OUK Brand Palette - Teal & Gold/Coral */
+    --primary-color: #037b90;
+    /* OUK Teal */
+    --secondary-color: #025f70;
+    /* Darker Teal for contrast */
+    --accent-color: #ff7f50;
+    /* OUK Gold/Coral */
     --bg-color: #f4f6f8;
     /* Light Grayish Blue Background */
     --card-bg: #ffffff;
