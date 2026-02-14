@@ -1,300 +1,244 @@
-/* Import Playful Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap');
+/* Professional & Academic - Inter Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --cute-peach: #ffb4a2;
-    /* Softer coral */
-    --cute-mint: #6ec1bd;
-    /* Fresh, friendly teal */
-    --cute-cream: #fff9f5;
-    /* Warm off-white */
-    --cute-pink: #ff85a1;
-    /* For accents/hearts */
-    --cute-text: #4a4e69;
-    /* Soft charcoal-purple */
-    --white: #ffffff;
-    --dark-mint: #5aa19d;
-    /* Darker version for gradient end */
-    --darker-pink: #e66a85;
-    /* Darker version for hover */
+    /* Professional Palette - Navy, Slate, Clean White */
+    --primary-color: #2c3e50;
+    /* Midnight Blue */
+    --secondary-color: #34495e;
+    /* Wet Asphalt */
+    --accent-color: #2980b9;
+    /* Belize Hole Blue */
+    --bg-color: #f4f6f8;
+    /* Light Grayish Blue Background */
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --text-muted: #666666;
+    --border-color: #e1e4e8;
+    --success-color: #27ae60;
 }
 
 /* Global Resets & Typography */
 body {
-    color: var(--cute-text);
-    background-color: #fcf6f5;
-    /* Very soft blush background */
-    font-family: 'Nunito', sans-serif;
-    line-height: 1.7;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
-    /* Removing default margin */
     overflow-x: hidden;
-    /* Prevent scrollbar from entrance animations */
 }
 
-/* Header Styling - Bubbly & Bright */
+/* Header Styling - Clean & Professional */
 .page-header {
-    background: linear-gradient(135deg, var(--cute-mint) 0%, var(--dark-mint) 100%);
-    color: var(--white);
-    padding: 5rem 2rem;
+    background: var(--primary-color);
+    color: #ffffff;
+    padding: 4rem 2rem;
     text-align: center;
-    border-bottom: 8px solid var(--cute-peach);
-    border-radius: 0 0 50px 50px;
-    /* Big rounded bottom */
-    position: relative;
-    z-index: 10;
+    border-bottom: 4px solid var(--accent-color);
 }
 
 .project-name {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
-    color: var(--white);
-    text-shadow: 3px 3px 0px rgba(255, 180, 162, 0.5);
-    /* using rgba equivalent of cute-peach */
-    font-size: 3rem;
-    letter-spacing: -0.01em;
+    color: #ffffff;
+    font-size: 2.5rem;
     margin: 0;
-    animation: bounceInDown 1s ease-out;
+    letter-spacing: -0.5px;
+    animation: fadeIn 1s ease-out;
 }
 
 .project-tagline {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.3rem;
-    margin-top: 0.5rem;
-    animation: fadeIn 1.5s ease-out 0.5s forwards;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.25rem;
+    margin-top: 0.75rem;
+    animation: fadeIn 1s ease-out 0.3s forwards;
     opacity: 0;
-    /* Start invisible for delay */
 }
 
 /* Main Content Styling */
 .main-content {
-    max-width: 880px;
-    margin: -30px auto 30px;
-    /* Pull content up into the header slightly, added bottom margin */
-    padding: 2.5rem;
-    background: var(--white);
-    border-radius: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin: -40px auto 40px;
+    /* Overlap header slightly */
+    padding: 3rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    /* Subtle rounding */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    /* Soft shadow */
     position: relative;
     z-index: 20;
     animation: slideInUp 0.8s ease-out 0.2s forwards;
     opacity: 0;
 }
 
-/* Subtle floating animation for the main card after it slides in */
-.main-content:hover {
-    animation: float 6s ease-in-out infinite;
-}
-
+/* Typography Hierarchy */
 .main-content h1,
 .main-content h2,
 .main-content h3 {
-    font-family: 'Quicksand', sans-serif;
-    color: var(--cute-mint);
+    font-family: 'Inter', sans-serif;
+    color: var(--primary-color);
+    margin-top: 2rem;
+}
+
+.main-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
 }
 
 .main-content h2 {
-    font-weight: 700;
-    font-size: 1.8rem;
-    background: rgba(255, 180, 162, 0.15);
-    /* rgba of cute-peach */
-    padding: 0.5rem 1.5rem;
-    border-radius: 20px;
-    display: inline-block;
-    margin-top: 2.5rem;
-    border-bottom: none;
-    transition: transform 0.3s ease;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    border-left: 5px solid var(--accent-color);
+    padding-left: 1rem;
+    margin-bottom: 1rem;
 }
 
-.main-content h2:hover {
-    transform: scale(1.02) rotate(-1deg);
+.main-content h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--secondary-color);
 }
 
-/* Bubbly Links */
+.main-content p {
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+/* Links - Professional & Clear */
 .main-content a {
-    color: var(--cute-pink);
+    color: var(--accent-color);
     text-decoration: none;
-    border-bottom: 2px dashed var(--cute-pink);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
 }
 
 .main-content a:hover {
-    color: var(--darker-pink);
-    padding: 0 5px;
-    background: rgba(255, 133, 161, 0.1);
-    /* rgba of cute-pink */
-    border-radius: 5px;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
 }
 
-/* Floating Card Lists */
-.main-content ul,
-.main-content ol {
-    margin-top: 1.5rem;
-    padding-left: 0;
+/* Lists - Checkmarks instead of Emojis */
+.main-content ul {
     list-style: none;
-    /* Remove default bullets for OL too if we want same style */
+    /* Remove default bullets */
+    padding-left: 0;
+    margin: 1.5rem 0;
 }
 
-/* Re-applying list styles to OL as well if needed, or keeping UL specific */
 .main-content ul li {
     position: relative;
-    padding: 1.2rem 1.2rem 1.2rem 3.5rem;
-    margin-bottom: 1rem;
-    background-color: var(--cute-cream);
-    border-radius: 18px;
-    /* Extra round */
-    box-shadow: 0 4px 0px rgba(110, 193, 189, 0.1);
-    /* rgba of cute-mint */
-    transition: all 0.3s ease;
-    opacity: 0;
-    /* Start hidden for staggered animation */
-    animation: popIn 0.5s ease-out forwards;
+    padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+    /* Space for icon */
+    margin-bottom: 0.5rem;
+    background-color: #fcfcfc;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    transition: all 0.2s ease;
 }
 
 .main-content ul li::before {
-    content: "✨";
-    /* Cute emoji bullet */
+    content: "✓";
     position: absolute;
-    left: 1.2rem;
+    left: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.2rem;
+    color: var(--success-color);
+    font-weight: bold;
 }
 
 .main-content ul li:hover {
-    transform: scale(1.02) translateX(5px);
-    box-shadow: 0 6px 15px rgba(110, 193, 189, 0.15);
-    /* rgba of cute-mint */
-    background-color: var(--white);
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border-color: var(--accent-color);
+    transform: translateX(4px);
 }
 
-/* Staggered delay for list items */
-.main-content li:nth-child(1) {
-    animation-delay: 0.4s;
+/* Ordered Lists */
+.main-content ol {
+    margin: 1.5rem 0 1.5rem 1.5rem;
 }
 
-.main-content li:nth-child(2) {
-    animation-delay: 0.5s;
+.main-content ol li {
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
 }
 
-.main-content li:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-.main-content li:nth-child(4) {
-    animation-delay: 0.7s;
-}
-
-.main-content li:nth-child(5) {
-    animation-delay: 0.8s;
-}
-
-.main-content li:nth-child(6) {
-    animation-delay: 0.9s;
-}
-
-.main-content li:nth-child(n+7) {
-    animation-delay: 1.0s;
-}
-
-
-/* Soft Blockquotes */
+/* Blockquotes - Academic Style */
 .main-content blockquote {
-    border-left: 8px solid var(--cute-peach);
-    background-color: #fff9f5;
-    padding: 1.5rem;
-    border-radius: 20px;
-    color: var(--cute-text);
-    /* slightly lightened usually */
+    border-left: 4px solid var(--accent-color);
+    background-color: #f8f9fa;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    color: var(--text-muted);
     font-style: italic;
-    margin: 2.5rem 0;
-    transition: transform 0.3s ease;
+    border-radius: 0 4px 4px 0;
 }
 
-.main-content blockquote:hover {
-    transform: scale(1.02);
-}
-
-/* Rounder Tables */
+/* Tables - Clean & Dense */
 .main-content table {
-    border-radius: 20px;
-    overflow: hidden;
-    border: 2px solid var(--cute-cream);
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
-    margin-bottom: 1rem;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+    font-size: 0.95rem;
 }
 
-.main-content th {
-    background-color: var(--cute-peach);
-    font-family: 'Quicksand', sans-serif;
-    color: var(--white);
-    padding: 1.2rem;
+.main-content th,
+.main-content td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
     text-align: left;
 }
 
-.main-content td {
-    padding: 1rem;
-    background: var(--white);
-    border-bottom: 1px solid var(--cute-cream);
+.main-content th {
+    background-color: #f1f3f5;
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
-/* Cute Image Style */
+.main-content tr:hover {
+    background-color: #fafafa;
+}
+
+/* Content Images */
 .main-content img {
-    border-radius: 30px;
-    border: 6px solid var(--cute-cream);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-    transition: transform 0.5s ease;
     max-width: 100%;
     height: auto;
-    animation: fadeIn 1s ease-out 0.5s forwards;
-    opacity: 0;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin: 1.5rem 0;
+    display: block;
 }
 
-.main-content img:hover {
-    transform: rotate(2deg) scale(1.05);
-}
-
-/* Footer Styling */
+/* Footer - Simple & Clean */
 .site-footer {
-    padding: 4rem 0;
-    background: none;
-    color: var(--cute-text);
+    padding: 3rem 0;
+    color: var(--text-muted);
     text-align: center;
-    font-family: 'Quicksand', sans-serif;
-    animation: fadeIn 1s ease-out 1.2s forwards;
-    opacity: 0;
+    font-size: 0.9rem;
+    margin-top: 2rem;
 }
 
 .site-footer a {
-    color: var(--cute-mint);
-    font-weight: 700;
-    text-decoration: none;
+    color: var(--text-muted);
+    text-decoration: underline;
 }
 
-/* --- Animations --- */
-
-/* Pop In */
-@keyframes popIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.9) translateY(10px);
-    }
-
-    70% {
-        transform: scale(1.02);
-    }
-
-    100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-    }
+.site-footer a:hover {
+    color: var(--primary-color);
 }
 
-/* Fade In */
+/* --- Subtle Animations --- */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -305,55 +249,14 @@ body {
     }
 }
 
-/* Slide In Up */
 @keyframes slideInUp {
     from {
         opacity: 0;
-        transform: translateY(50px);
+        transform: translateY(20px);
     }
 
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-/* Bounce In Down */
-@keyframes bounceInDown {
-    0% {
-        opacity: 0;
-        transform: translateY(-200px);
-    }
-
-    60% {
-        opacity: 1;
-        transform: translateY(25px);
-    }
-
-    75% {
-        transform: translateY(-10px);
-    }
-
-    90% {
-        transform: translateY(5px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}
-
-/* Gentle Float */
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-5px);
-    }
-
-    100% {
-        transform: translateY(0px);
     }
 }
