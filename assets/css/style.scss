@@ -1,208 +1,277 @@
 --- --- @import "{{ site.theme }}";
 
-/* Import Playful Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap');
+/* Import Bookish Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
-/* "Cuter" Color Palette */
-$cute-peach: #ffb4a2;
-/* Softer coral */
-$cute-mint: #6ec1bd;
-/* Fresh, friendly teal */
-$cute-cream: #fff9f5;
-/* Warm off-white */
-$cute-pink: #ff85a1;
-/* For accents/hearts */
-$cute-text: #4a4e69;
-/* Soft charcoal-purple */
-$white: #ffffff;
+/* Book Design Variables */
+$book-bg: #f2efe9;
+/* Soft parchment background for the body */
+$paper-bg: #fdfbf7;
+/* Slightly brighter paper color for content */
+$ink-color: #2b2b2b;
+/* Soft Black for text */
+$accent-color: #800000;
+/* Eraser dust / Burgundy accent */
+$link-color: #000080;
+/* Traditional Navy Link */
+$border-color: #dcd6ce;
+/* Subtle darker edge */
+
+$font-body: 'Crimson Text', serif;
+$font-heading: 'Playfair Display', serif;
 
 /* Global Resets & Typography */
 body {
-    color: $cute-text;
-    background-color: #fcf6f5;
-    /* Very soft blush background */
-    font-family: 'Nunito', sans-serif;
-    line-height: 1.7;
+    background-color: $book-bg;
+    color: $ink-color;
+    font-family: $font-body;
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 0;
 }
 
-/* Header Styling - Bubbly & Bright */
+/* Page Header - Title Page Style */
 .page-header {
-    background: linear-gradient(135deg, $cute-mint 0%, darken($cute-mint, 10%) 100%);
-    color: $white;
-    padding: 5rem 2rem;
+    background-color: $book-bg;
+    background-image: none;
+    /* Remove any theme gradients */
+    color: $ink-color;
+    padding: 6rem 2rem 4rem;
     text-align: center;
-    border-bottom: 8px solid $cute-peach;
-    border-radius: 0 0 50px 50px;
-    /* Big rounded bottom */
+    border-bottom: 4px double $ink-color;
+    margin-bottom: 2rem;
 }
 
 .project-name {
-    font-family: 'Quicksand', sans-serif;
+    font-family: $font-heading;
     font-weight: 700;
-    color: $white;
-    text-shadow: 3px 3px 0px rgba($cute-peach, 0.5);
-    font-size: 3rem;
-    letter-spacing: -0.01em;
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: $ink-color;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: none;
+    /* Remove playful shadow */
 }
 
 .project-tagline {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
-    color: rgba($white, 0.9);
-    font-size: 1.3rem;
-    margin-top: 0.5rem;
+    font-family: $font-body;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: lighten($ink-color, 20%);
+    margin-top: 1rem;
 }
 
-/* Main Content Styling */
+/* Main Content - The Page */
 .main-content {
-    max-width: 880px;
-    margin: -30px auto 0;
-    /* Pull content up into the header slightly */
-    padding: 2.5rem;
-    background: $white;
-    border-radius: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    max-width: 800px;
+    margin: 0 auto 5rem;
+    padding: 5rem 6rem;
+    background-color: $paper-bg;
+    box-shadow:
+        0 1px 1px rgba(0, 0, 0, 0.15),
+        0 10px 0 -5px #eee,
+        0 10px 1px -4px rgba(0, 0, 0, 0.15),
+        0 20px 0 -10px #eee,
+        0 20px 1px -9px rgba(0, 0, 0, 0.15);
+    /* Stacked paper effect */
+    border: 1px solid #e6e6e6;
 
+    /* Typography within content */
     h1,
     h2,
-    h3 {
-        font-family: 'Quicksand', sans-serif;
-        color: $cute-mint;
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $font-heading;
+        color: $ink-color;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        line-height: 1.25;
+        font-weight: 700;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 1rem;
+        margin-top: 1rem;
     }
 
     h2 {
-        font-weight: 700;
-        font-size: 1.8rem;
-        background: rgba($cute-peach, 0.15);
-        padding: 0.5rem 1.5rem;
-        border-radius: 20px;
-        display: inline-block;
-        margin-top: 2.5rem;
-        border-bottom: none;
+        font-size: 2rem;
+        border-bottom: 1px solid $ink-color;
+        padding-bottom: 0.5rem;
+        display: block;
+        /* Ensure full width */
+        width: 100%;
+        background: none;
+        /* Remove playful background */
+        border-radius: 0;
     }
 
-    /* Bubbly Links */
+    h3 {
+        font-size: 1.6rem;
+        font-style: italic;
+    }
+
+    /* Justified text for book feel */
+    p {
+        margin-bottom: 1.5rem;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
+    /* Links */
     a {
-        color: $cute-pink;
-        text-decoration: none;
-        border-bottom: 2px dashed $cute-pink;
-        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        color: $link-color;
+        text-decoration: underline;
+        border-bottom: none;
+        /* Remove playful border */
+        transition: color 0.2s;
 
         &:hover {
-            color: darken($cute-pink, 10%);
-            padding: 0 5px;
-            background: rgba($cute-pink, 0.1);
-            border-radius: 5px;
+            color: $accent-color;
+            background: none;
+            /* Remove playful background */
         }
     }
 
-    /* Floating Card Lists */
+    /* Lists */
+    ul,
+    ol {
+        margin-bottom: 1.5rem;
+        padding-left: 2.5rem;
+    }
+
     ul {
-        list-style: none;
-        padding-left: 0;
+        list-style-type: disc;
+    }
 
-        li {
-            position: relative;
-            padding: 1.2rem 1.2rem 1.2rem 3.5rem;
-            margin-bottom: 1rem;
-            background-color: $cute-cream;
-            border-radius: 18px;
-            /* Extra round */
-            box-shadow: 0 4px 0px rgba($cute-mint, 0.1);
-            transition: all 0.3s ease;
+    li {
+        margin-bottom: 0.5rem;
+        background: none;
+        /* Remove playful cards */
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
 
-            &::before {
-                content: "✨";
-                /* Cute emoji bullet */
-                position: absolute;
-                left: 1.2rem;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: 1.2rem;
-            }
+        &::before {
+            content: none;
+            /* Remove emojis */
+        }
 
-            &:hover {
-                transform: scale(1.02);
-                box-shadow: 0 6px 15px rgba($cute-mint, 0.15);
-                background-color: $white;
-            }
+        &:hover {
+            transform: none;
+            box-shadow: none;
+            background: none;
         }
     }
 
-    /* Soft Blockquotes */
+    /* Blockquotes */
     blockquote {
-        border-left: 8px solid $cute-peach;
-        background-color: #fff9f5;
-        padding: 1.5rem;
-        border-radius: 20px;
-        color: lighten($cute-text, 10%);
+        font-family: $font-heading;
+        font-size: 1.3rem;
+        border-left: 4px solid $accent-color;
+        background-color: transparent;
+        /* Remove playful background */
+        padding: 0.5rem 0 0.5rem 2rem;
+        margin: 2rem 0;
+        color: lighten($ink-color, 15%);
         font-style: italic;
-        margin: 2.5rem 0;
+        border-radius: 0;
     }
 
-    /* Rounder Tables */
+    /* Tables */
     table {
-        border-radius: 20px;
-        overflow: hidden;
-        border: 2px solid $cute-cream;
+        width: 100%;
+        margin: 2rem 0;
+        border-collapse: collapse;
+        border: 2px solid $ink-color;
+        /* Solid simple border */
+        border-radius: 0;
+        overflow: visible;
 
-        th {
-            background-color: $cute-peach;
-            font-family: 'Quicksand', sans-serif;
-            color: $white;
-            padding: 1.2rem;
-        }
-
+        th,
         td {
             padding: 1rem;
-            background: $white;
+            border: 1px solid #ccc;
+            text-align: left;
+            background: none;
+        }
+
+        th {
+            background-color: #eee;
+            /* Simple grey header */
+            color: $ink-color;
+            font-family: $font-heading;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.9rem;
         }
     }
 
-    /* Cute Image Style */
+    /* Images */
     img {
-        border-radius: 30px;
-        border: 6px solid $cute-cream;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-        transition: transform 0.5s ease;
+        display: block;
+        max-width: 100%;
+        margin: 2rem auto;
+        border: 1px solid #ddd;
+        padding: 5px;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 0;
+        /* No rounded corners */
+        transition: none;
 
         &:hover {
-            transform: rotate(2deg) scale(1.05);
+            transform: none;
+        }
+    }
+
+    /* Footer within main content if present */
+    .site-footer {
+        border-top: 1px solid #ccc;
+        margin-top: 4rem;
+        padding-top: 2rem;
+        text-align: center;
+        font-size: 0.9rem;
+        font-style: italic;
+        color: #666;
+
+        a {
+            color: $ink-color;
         }
     }
 }
 
-/* Footer Styling */
-.site-footer {
-    padding: 4rem 0;
-    background: none;
-    color: $cute-text;
-    text-align: center;
-    font-family: 'Quicksand', sans-serif;
+/* Print Styles */
+@media print {
+    body {
+        background-color: #fff;
+    }
 
-    a {
-        color: $cute-mint;
-        font-weight: 700;
+    .main-content {
+        box-shadow: none;
+        border: none;
+        max-width: 100%;
+        padding: 0;
     }
 }
 
-/* Bouncy Animation */
-@keyframes popIn {
-    0% {
-        opacity: 0;
-        transform: scale(0.9);
+/* Responsiveness */
+@media screen and (max-width: 768px) {
+    .main-content {
+        padding: 2rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    70% {
-        transform: scale(1.05);
+    .project-name {
+        font-size: 2.5rem;
     }
-
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.main-content ul li {
-    animation: popIn 0.4s ease-out forwards;
 }

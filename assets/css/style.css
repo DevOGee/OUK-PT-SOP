@@ -1,262 +1,245 @@
-/* Professional & Academic - Inter Font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Book Design - Classic & Elegant */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-    /* OUK Brand Palette - Teal & Gold/Coral */
-    --primary-color: #037b90;
-    /* OUK Teal */
-    --secondary-color: #025f70;
-    /* Darker Teal for contrast */
-    --accent-color: #ff7f50;
-    /* OUK Gold/Coral */
-    --bg-color: #f4f6f8;
-    /* Light Grayish Blue Background */
-    --card-bg: #ffffff;
-    --text-color: #333333;
-    --text-muted: #666666;
-    --border-color: #e1e4e8;
-    --success-color: #27ae60;
+    --book-bg: #f2efe9;
+    /* Soft parchment background */
+    --paper-bg: #fdfbf7;
+    /* Page background */
+    --ink-color: #2b2b2b;
+    /* Text color */
+    --accent-color: #800000;
+    /* Burgundy */
+    --link-color: #000080;
+    /* Navy */
+    --border-color: #dcd6ce;
+    --font-body: 'Crimson Text', serif;
+    --font-heading: 'Playfair Display', serif;
 }
 
-/* Global Resets & Typography */
+/* Reset & Global */
 body {
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--book-bg);
+    color: var(--ink-color);
+    font-family: var(--font-body);
+    font-size: 20px;
     line-height: 1.6;
     margin: 0;
-    overflow-x: hidden;
 }
 
-/* Header Styling - Clean & Professional */
+/* Page Header */
 .page-header {
-    background: var(--primary-color);
-    color: #ffffff;
-    padding: 4rem 2rem;
+    background-color: var(--book-bg);
+    background-image: none;
+    color: var(--ink-color);
+    padding: 6rem 2rem 4rem;
     text-align: center;
-    border-bottom: 4px solid var(--accent-color);
+    border-bottom: 4px double var(--ink-color);
+    margin-bottom: 2rem;
 }
 
 .project-name {
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-heading);
     font-weight: 700;
-    color: #ffffff;
-    font-size: 2.5rem;
-    margin: 0;
-    letter-spacing: -0.5px;
-    animation: fadeIn 1s ease-out;
+    font-size: 3.5rem;
+    margin: 0 0 0.5rem 0;
+    color: var(--ink-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: none;
 }
 
 .project-tagline {
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 1.25rem;
-    margin-top: 0.75rem;
-    animation: fadeIn 1s ease-out 0.3s forwards;
-    opacity: 0;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.4rem;
+    color: #555;
+    /* Lightened ink */
+    margin-top: 1rem;
+    opacity: 0.8;
 }
 
-/* Main Content Styling */
+/* Main Content */
 .main-content {
-    max-width: 900px;
-    margin: -40px auto 40px;
-    /* Overlap header slightly */
-    padding: 3rem;
-    background: var(--card-bg);
-    border-radius: 8px;
-    /* Subtle rounding */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    /* Soft shadow */
-    position: relative;
-    z-index: 20;
-    animation: slideInUp 0.8s ease-out 0.2s forwards;
-    opacity: 0;
+    max-width: 800px;
+    margin: 0 auto 5rem;
+    padding: 5rem 6rem;
+    background-color: var(--paper-bg);
+    box-shadow:
+        0 1px 1px rgba(0, 0, 0, 0.15),
+        0 10px 0 -5px #eee,
+        0 10px 1px -4px rgba(0, 0, 0, 0.15),
+        0 20px 0 -10px #eee,
+        0 20px 1px -9px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e6e6e6;
 }
 
-/* Typography Hierarchy */
+/* Typography */
 .main-content h1,
 .main-content h2,
-.main-content h3 {
-    font-family: 'Inter', sans-serif;
-    color: var(--primary-color);
-    margin-top: 2rem;
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+    font-family: var(--font-heading);
+    color: var(--ink-color);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+    font-weight: 700;
 }
 
 .main-content h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 0.5rem;
+    font-size: 2.5rem;
+    text-align: center;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .main-content h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--secondary-color);
-    border-left: 5px solid var(--accent-color);
-    padding-left: 1rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    border-bottom: 1px solid var(--ink-color);
+    padding-bottom: 0.5rem;
+    width: 100%;
+    border-left: none;
+    padding-left: 0;
 }
 
 .main-content h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--secondary-color);
+    font-size: 1.6rem;
+    font-style: italic;
 }
 
 .main-content p {
-    margin-bottom: 1.25rem;
-    font-size: 1rem;
-    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
-/* Links - Professional & Clear */
+/* Links */
 .main-content a {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: 500;
-    border-bottom: 1px solid transparent;
-    transition: all 0.2s ease;
+    color: var(--link-color);
+    text-decoration: underline;
+    transition: color 0.2s;
+    border-bottom: none;
 }
 
 .main-content a:hover {
-    color: var(--primary-color);
-    border-bottom: 1px solid var(--primary-color);
+    color: var(--accent-color);
 }
 
-/* Lists - Checkmarks instead of Emojis */
+/* Lists */
+.main-content ul,
+.main-content ol {
+    margin-bottom: 1.5rem;
+    padding-left: 2.5rem;
+}
+
 .main-content ul {
-    list-style: none;
-    /* Remove default bullets */
-    padding-left: 0;
-    margin: 1.5rem 0;
+    list-style-type: disc;
 }
 
-.main-content ul li {
-    position: relative;
-    padding: 0.75rem 0.75rem 0.75rem 2.5rem;
-    /* Space for icon */
+.main-content li {
     margin-bottom: 0.5rem;
-    background-color: #fcfcfc;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    transition: all 0.2s ease;
+    background: none;
+    padding: 0;
+    box-shadow: none;
+    border: none;
 }
 
 .main-content ul li::before {
-    content: "✓";
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--success-color);
-    font-weight: bold;
+    content: none;
 }
 
-.main-content ul li:hover {
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    border-color: var(--accent-color);
-    transform: translateX(4px);
-}
-
-/* Ordered Lists */
-.main-content ol {
-    margin: 1.5rem 0 1.5rem 1.5rem;
-}
-
-.main-content ol li {
-    margin-bottom: 0.5rem;
-    padding-left: 0.5rem;
-}
-
-/* Blockquotes - Academic Style */
+/* Blockquotes */
 .main-content blockquote {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
     border-left: 4px solid var(--accent-color);
-    background-color: #f8f9fa;
-    padding: 1rem 1.5rem;
-    margin: 1.5rem 0;
-    color: var(--text-muted);
+    background-color: transparent;
+    padding: 0.5rem 0 0.5rem 2rem;
+    margin: 2rem 0;
+    color: #555;
     font-style: italic;
-    border-radius: 0 4px 4px 0;
+    border-radius: 0;
 }
 
-/* Tables - Clean & Dense */
+/* Tables */
 .main-content table {
     width: 100%;
+    margin: 2rem 0;
     border-collapse: collapse;
-    margin-bottom: 2rem;
-    border: 1px solid var(--border-color);
-    font-size: 0.95rem;
+    border: 2px solid var(--ink-color);
+    font-size: 1rem;
 }
 
 .main-content th,
 .main-content td {
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+    border: 1px solid #ccc;
     text-align: left;
 }
 
 .main-content th {
-    background-color: #f1f3f5;
-    color: var(--primary-color);
-    font-weight: 600;
+    background-color: #eee;
+    color: var(--ink-color);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.9rem;
 }
 
-.main-content tr:hover {
-    background-color: #fafafa;
-}
-
-/* Content Images */
+/* Images */
 .main-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    margin: 1.5rem 0;
     display: block;
+    max-width: 100%;
+    margin: 2rem auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 0;
 }
 
-/* Footer - Simple & Clean */
+/* Footer */
 .site-footer {
-    padding: 3rem 0;
-    color: var(--text-muted);
+    border-top: 1px solid #ccc;
+    margin-top: 4rem;
+    padding-top: 2rem;
     text-align: center;
     font-size: 0.9rem;
-    margin-top: 2rem;
+    font-style: italic;
+    color: #666;
 }
 
 .site-footer a {
-    color: var(--text-muted);
-    text-decoration: underline;
+    color: var(--ink-color);
 }
 
-.site-footer a:hover {
-    color: var(--primary-color);
-}
-
-/* --- Subtle Animations --- */
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
+@media print {
+    body {
+        background-color: #fff;
     }
 
-    to {
-        opacity: 1;
+    .main-content {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
     }
 }
 
-@keyframes slideInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+@media screen and (max-width: 768px) {
+    .main-content {
+        padding: 2rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .project-name {
+        font-size: 2.5rem;
     }
 }
