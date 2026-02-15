@@ -1,34 +1,26 @@
 --- --- @import "{{ site.theme }}";
 
 /* ==========================================================================
-   Book Design Variables & Fonts
+   GitHub Dark UI + OUK Teal Header
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-$book-bg: #f2efe9;
-/* Soft parchment background */
-$paper-bg: #fdfbf7;
-/* Slightly brighter paper color */
-$ink-color: #2b2b2b;
-/* Soft Black for body text */
-
+/* Variables */
+$github-bg: #0d1117;
+/* Main background (Dark) */
+$github-panel: #161b22;
+/* Container background */
+$github-text: #c9d1d9;
+/* Primary text */
+$github-border: #30363d;
+/* Borders */
+$github-link: #58a6ff;
+/* Links (Blue) */
 $ouk-teal: #037b90;
-/* Primary OUK Teal */
+/* OUK Teal for Header */
 $ouk-gold: #d4af37;
-/* Classic Metallic Gold */
-$ouk-teal-dark: #025f70;
-/* Darker shade for text/headings */
+/* OUK Gold for Accents */
 
-$link-color: $ouk-teal;
-$accent-color: $ouk-gold;
-$border-color: #dcd6ce;
-
-$font-body: 'Quicksand', sans-serif;
-$font-heading: 'Quicksand', sans-serif;
-
-/* ==========================================================================
-   Global Resets & Typography
-   ========================================================================== */
+/* Global Reset & Typography */
 *,
 *::before,
 *::after {
@@ -36,265 +28,227 @@ $font-heading: 'Quicksand', sans-serif;
 }
 
 body {
-    background-color: $book-bg;
-    color: $ink-color;
-    font-family: $font-body;
-    font-size: 20px;
+    background-color: $github-bg;
+    color: $github-text;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
     line-height: 1.6;
     margin: 0;
+    font-size: 16px;
 }
 
-/* ==========================================================================
-   Page Header - Title Page Style
-   ========================================================================== */
+/* Page Header - OUK Teal */
 .page-header {
-    background-color: $book-bg;
-    background-image: none;
-    color: $ouk-teal-dark;
-    padding: 6rem 2rem 4rem;
+    background-color: $ouk-teal;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    color: #ffffff;
+    padding: 3rem 2rem;
     text-align: center;
-    border-bottom: 6px double $ouk-gold;
+    border-bottom: 1px solid $github-border;
     margin-bottom: 2rem;
 }
 
 .project-name {
-    font-family: $font-heading;
-    font-weight: 700;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+    font-weight: 600;
     margin-bottom: 0.5rem;
-    color: $ouk-teal-dark;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-shadow: 2px 2px 0px rgba($ouk-gold, 0.2);
+    color: #ffffff;
+    text-shadow: none;
 }
 
 .project-tagline {
-    font-family: $font-body;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 1.4rem;
-    color: rgba($ouk-teal-dark, 0.8);
-    margin-top: 1rem;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 0.5rem;
 }
 
-/* ==========================================================================
-   Main Content - The Page
-   ========================================================================== */
+/* Main Content - GitHub Container */
 .main-content {
-    max-width: 800px;
-    margin: 0 auto 5rem;
-    padding: 5rem 6rem;
-    background-color: $paper-bg;
-    box-shadow:
-        0 1px 1px rgba(0, 0, 0, 0.15),
-        0 10px 0 -5px $ouk-teal-dark,
-        0 10px 1px -4px rgba(0, 0, 0, 0.15),
-        0 20px 0 -10px $book-bg,
-        0 20px 1px -9px rgba(0, 0, 0, 0.15);
-    border: 1px solid #e6e6e6;
-    border-top: 4px solid $ouk-gold;
+    max-width: 1012px;
+    /* Standard GitHub content width */
+    margin: 0 auto 3rem;
+    padding: 2rem;
+    /* 32px on GitHub typically, but 2rem is safe */
+    background-color: $github-panel;
+    border: 1px solid $github-border;
+    border-radius: 6px;
+}
 
-    /* Typography within content */
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: $font-heading;
-        color: $ouk-teal-dark;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-        line-height: 1.25;
-        font-weight: 700;
-    }
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #e6edf3;
+    /* Brighter text for headings */
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+}
 
-    h1 {
-        font-size: 2.5rem;
-        text-align: center;
-        border-bottom: 1px solid $ouk-gold;
-        padding-bottom: 1rem;
-        margin-top: 1rem;
-    }
+h1,
+h2 {
+    border-bottom: 1px solid $github-border;
+    padding-bottom: 0.3em;
+}
 
-    h2 {
-        font-size: 2rem;
-        border-bottom: 2px solid $ouk-gold;
-        padding-bottom: 0.5rem;
-        display: block;
-        width: 100%;
-        background: none;
-        border-radius: 0;
-    }
+h1 {
+    font-size: 2em;
+}
 
-    h3 {
-        font-size: 1.6rem;
-        font-style: italic;
-        color: $ouk-teal;
-    }
+h2 {
+    font-size: 1.5em;
+}
 
-    p {
-        margin-bottom: 1.5rem;
-        text-align: justify;
-        text-justify: inter-word;
-        -webkit-hyphens: auto;
-        -ms-hyphens: auto;
-        hyphens: auto;
-    }
+h3 {
+    font-size: 1.25em;
+}
 
-    /* Links */
-    a {
-        color: $ouk-teal;
+h4 {
+    font-size: 1em;
+}
+
+h5 {
+    font-size: 0.875em;
+}
+
+h6 {
+    font-size: 0.85em;
+    color: #8b949e;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Links */
+a {
+    color: $github-link;
+    text-decoration: none;
+
+    &:hover {
         text-decoration: underline;
-        text-decoration-color: $ouk-gold;
-        border-bottom: none;
-        transition: color 0.2s;
-
-        &:hover {
-            color: $ouk-gold;
-            background: none;
-        }
     }
+}
 
-    /* Lists */
-    ul,
-    ol {
-        margin-bottom: 1.5rem;
-        padding-left: 2.5rem;
-    }
+/* Lists */
+ul,
+ol {
+    padding-left: 2em;
+    margin-bottom: 16px;
+}
 
-    ul {
-        list-style-type: square;
-    }
+li {
+    margin-top: 0.25em;
+}
 
-    ul li::marker {
-        color: $ouk-gold;
-    }
+li::marker {
+    color: #8b949e;
+}
 
-    li {
-        margin-bottom: 0.5rem;
+/* Blockquotes */
+blockquote {
+    margin: 0 0 16px;
+    padding: 0 1em;
+    color: #8b949e;
+    border-left: 0.25em solid $ouk-gold;
+    /* Using OUK Gold as the accent */
+}
+
+/* Code Blocks */
+code,
+tt {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    background-color: rgba(110, 118, 129, 0.4);
+    border-radius: 6px;
+}
+
+pre {
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #161b22;
+    border-radius: 6px;
+
+    code {
         padding: 0;
+        margin: 0;
+        background-color: transparent;
+    }
+}
+
+/* Tables */
+table {
+    width: 100%;
+    margin-bottom: 16px;
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    th,
+    td {
+        padding: 6px 13px;
+        border: 1px solid $github-border;
     }
 
-    /* Blockquotes */
-    blockquote {
-        font-family: $font-heading;
-        font-size: 1.3rem;
-        border-left: 4px solid $ouk-gold;
-        background-color: rgba($ouk-gold, 0.05);
-        padding: 1rem 1rem 1rem 2rem;
-        margin: 2rem 0;
-        color: $ouk-teal-dark;
-        font-style: italic;
-        border-radius: 0;
+    th {
+        font-weight: 600;
+        background-color: $github-panel;
     }
 
-    /* Tables */
-    table {
-        width: 100%;
-        margin: 2rem 0;
-        border-collapse: collapse;
-        border: 2px solid $ouk-teal;
-        border-radius: 0;
-        overflow: visible;
+    tr {
+        background-color: $github-bg;
+        border-top: 1px solid $github-border;
 
-        th,
-        td {
-            padding: 1rem;
-            border: 1px solid $border-color;
-            text-align: left;
-            background: none;
-        }
-
-        th {
-            background-color: $ouk-teal;
-            color: #fff;
-            font-family: $font-heading;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.9rem;
-            border: 1px solid $ouk-teal;
-        }
-
-        /* Alternate rows */
-        tr:nth-child(even) {
-            background-color: rgba($ouk-teal, 0.03);
-        }
-    }
-
-    /* Images */
-    img {
-        display: block;
-        max-width: 100%;
-        margin: 2rem auto;
-        border: 4px solid $ouk-gold;
-        padding: 0;
-        background: #fff;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        border-radius: 0;
-        transition: none;
-
-        &:hover {
-            transform: none;
-        }
-    }
-
-    /* Footer within main content */
-    .site-footer {
-        border-top: 1px solid $ouk-gold;
-        margin-top: 4rem;
-        padding-top: 2rem;
-        text-align: center;
-        font-size: 0.9rem;
-        font-style: italic;
-        color: $ouk-teal-dark;
-
-        a {
-            color: $ouk-teal;
+        &:nth-child(2n) {
+            background-color: $github-panel;
         }
     }
 }
 
-/* ==========================================================================
-   Print & Responsive Styles
-   ========================================================================== */
-@media print {
-    body {
-        background-color: #fff;
+/* Images */
+img {
+    max-width: 100%;
+    box-sizing: content-box;
+    background-color: $github-bg;
+
+    &[align="right"] {
+        padding-left: 20px;
     }
 
-    .main-content {
-        box-shadow: none;
-        border: none;
-        max-width: 100%;
-        padding: 0;
+    &[align="left"] {
+        padding-right: 20px;
     }
 }
 
+/* Footer */
+.site-footer {
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid $github-border;
+    text-align: center;
+    color: #8b949e;
+    font-size: 12px;
+
+    a {
+        color: $github-link;
+    }
+}
+
+/* Responsive */
 @media screen and (max-width: 768px) {
     .main-content {
-        padding: 2rem;
-        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 0;
     }
 
     .project-name {
-        font-size: 2.5rem;
-    }
-
-    /* Drop Cap (Manuscript Flair) */
-    p.has-drop-cap::first-letter {
-        float: left;
-        font-family: $font-heading;
-        font-size: 4.2rem;
-        font-weight: 700;
-        color: $ouk-teal-dark;
-        line-height: 0.85;
-        /* Keeps the big letter flush with the text */
-        margin: 0.05em 0.12em 0 0;
-        /* Creates breathing room around the letter */
-        text-transform: uppercase;
-        text-shadow: 2px 2px 0px rgba($ouk-gold, 0.4);
-        /* Subtle gold accent */
+        font-size: 1.75rem;
     }
 }
