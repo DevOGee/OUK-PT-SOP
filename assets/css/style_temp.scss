@@ -1,45 +1,49 @@
+/* ==========================================================================
+   OUK Core Colors & Soft Palette
+   ========================================================================== */
+$ouk-gold: #ff7f50;
+/* Brand Gold/Coral - Used for warm accents */
+$ouk-teal: #037b90;
+/* Brand Teal - Used for primary headers and links */
+$white: #ffffff;
+
+/* Soft background colors to maintain the "cute/bubbly" aesthetic */
+$soft-cream: #fff9f5;
+$soft-blush: #fcf6f5;
+$text-dark: #1d3c42;
+/* A deeply darkened teal for highly readable text */
 
 /* Import Playful Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap');
 
-/* "Cuter" Color Palette */
-$cute-peach: #ffb4a2;
-/* Softer coral */
-$cute-mint: #6ec1bd;
-/* Fresh, friendly teal */
-$cute-cream: #fff9f5;
-/* Warm off-white */
-$cute-pink: #ff85a1;
-/* For accents/hearts */
-$cute-text: #4a4e69;
-/* Soft charcoal-purple */
-$white: #ffffff;
-
-/* Global Resets & Typography */
+/* ==========================================================================
+   Global Resets & Typography
+   ========================================================================== */
 body {
-    color: $cute-text;
-    background-color: #fcf6f5;
-    /* Very soft blush background */
+    color: $text-dark;
+    background-color: $soft-blush;
     font-family: 'Nunito', sans-serif;
     line-height: 1.7;
 }
 
-/* Header Styling - Bubbly & Bright */
+/* ==========================================================================
+   Header Styling - Bubbly & Bright
+   ========================================================================== */
 .page-header {
-    background: linear-gradient(135deg, $cute-mint 0%, darken($cute-mint, 10%) 100%);
+    /* Uses the OUK Teal for a vibrant gradient */
+    background: linear-gradient(135deg, lighten($ouk-teal, 15%) 0%, $ouk-teal 100%);
     color: $white;
     padding: 5rem 2rem;
     text-align: center;
-    border-bottom: 8px solid $cute-peach;
+    border-bottom: 8px solid $ouk-gold;
     border-radius: 0 0 50px 50px;
-    /* Big rounded bottom */
 }
 
 .project-name {
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     color: $white;
-    text-shadow: 3px 3px 0px rgba($cute-peach, 0.5);
+    text-shadow: 3px 3px 0px rgba($ouk-gold, 0.6);
     font-size: 3rem;
     letter-spacing: -0.01em;
 }
@@ -52,11 +56,12 @@ body {
     margin-top: 0.5rem;
 }
 
-/* Main Content Styling */
+/* ==========================================================================
+   Main Content Styling
+   ========================================================================== */
 .main-content {
     max-width: 880px;
     margin: -30px auto 0;
-    /* Pull content up into the header slightly */
     padding: 2.5rem;
     background: $white;
     border-radius: 30px;
@@ -66,13 +71,13 @@ body {
     h2,
     h3 {
         font-family: 'Quicksand', sans-serif;
-        color: $cute-mint;
+        color: $ouk-teal;
     }
 
     h2 {
         font-weight: 700;
         font-size: 1.8rem;
-        background: rgba($cute-peach, 0.15);
+        background: rgba($ouk-gold, 0.15);
         padding: 0.5rem 1.5rem;
         border-radius: 20px;
         display: inline-block;
@@ -82,15 +87,15 @@ body {
 
     /* Bubbly Links */
     a {
-        color: $cute-pink;
+        color: $ouk-gold;
         text-decoration: none;
-        border-bottom: 2px dashed $cute-pink;
+        border-bottom: 2px dashed $ouk-gold;
         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
         &:hover {
-            color: darken($cute-pink, 10%);
+            color: darken($ouk-gold, 15%);
             padding: 0 5px;
-            background: rgba($cute-pink, 0.1);
+            background: rgba($ouk-gold, 0.1);
             border-radius: 5px;
         }
     }
@@ -104,15 +109,15 @@ body {
             position: relative;
             padding: 1.2rem 1.2rem 1.2rem 3.5rem;
             margin-bottom: 1rem;
-            background-color: $cute-cream;
+            background-color: $soft-cream;
             border-radius: 18px;
-            /* Extra round */
-            box-shadow: 0 4px 0px rgba($cute-mint, 0.1);
+            box-shadow: 0 4px 0px rgba($ouk-teal, 0.1);
             transition: all 0.3s ease;
+            animation: popIn 0.4s ease-out forwards;
+            /* Applied animation here */
 
             &::before {
                 content: "✨";
-                /* Cute emoji bullet */
                 position: absolute;
                 left: 1.2rem;
                 top: 50%;
@@ -122,7 +127,7 @@ body {
 
             &:hover {
                 transform: scale(1.02);
-                box-shadow: 0 6px 15px rgba($cute-mint, 0.15);
+                box-shadow: 0 6px 15px rgba($ouk-teal, 0.15);
                 background-color: $white;
             }
         }
@@ -130,11 +135,11 @@ body {
 
     /* Soft Blockquotes */
     blockquote {
-        border-left: 8px solid $cute-peach;
-        background-color: #fff9f5;
+        border-left: 8px solid $ouk-gold;
+        background-color: $soft-cream;
         padding: 1.5rem;
         border-radius: 20px;
-        color: lighten($cute-text, 10%);
+        color: lighten($text-dark, 15%);
         font-style: italic;
         margin: 2.5rem 0;
     }
@@ -143,27 +148,34 @@ body {
     table {
         border-radius: 20px;
         overflow: hidden;
-        border: 2px solid $cute-cream;
+        border: 2px solid $soft-cream;
+        width: 100%;
+        border-collapse: collapse;
+        /* Added to fix spacing issues in some browsers */
 
         th {
-            background-color: $cute-peach;
+            background-color: $ouk-gold;
             font-family: 'Quicksand', sans-serif;
             color: $white;
             padding: 1.2rem;
+            text-align: left;
         }
 
         td {
             padding: 1rem;
             background: $white;
+            border-bottom: 1px solid $soft-cream;
         }
     }
 
     /* Cute Image Style */
     img {
         border-radius: 30px;
-        border: 6px solid $cute-cream;
+        border: 6px solid $soft-cream;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
         transition: transform 0.5s ease;
+        max-width: 100%;
+        /* Ensures images don't break the container */
 
         &:hover {
             transform: rotate(2deg) scale(1.05);
@@ -171,21 +183,27 @@ body {
     }
 }
 
-/* Footer Styling */
+/* ==========================================================================
+   Footer Styling
+   ========================================================================== */
 .site-footer {
     padding: 4rem 0;
     background: none;
-    color: $cute-text;
+    color: $text-dark;
     text-align: center;
     font-family: 'Quicksand', sans-serif;
 
     a {
-        color: $cute-mint;
+        color: $ouk-teal;
         font-weight: 700;
+        border-bottom: none;
+        /* Removes dashed border inherited from main content if applicable */
     }
 }
 
-/* Bouncy Animation */
+/* ==========================================================================
+   Animations
+   ========================================================================== */
 @keyframes popIn {
     0% {
         opacity: 0;
@@ -200,8 +218,4 @@ body {
         opacity: 1;
         transform: scale(1);
     }
-}
-
-.main-content ul li {
-    animation: popIn 0.4s ease-out forwards;
 }

@@ -1,9 +1,10 @@
 --- --- @import "{{ site.theme }}";
 
-/* Import Bookish Google Fonts */
+/* ==========================================================================
+   Book Design Variables & Fonts
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
-/* OUK Book Design Variables */
 $book-bg: #f2efe9;
 /* Soft parchment background */
 $paper-bg: #fdfbf7;
@@ -11,7 +12,6 @@ $paper-bg: #fdfbf7;
 $ink-color: #2b2b2b;
 /* Soft Black for body text */
 
-/* OUK Colors */
 $ouk-teal: #037b90;
 /* Primary OUK Teal */
 $ouk-gold: #d4af37;
@@ -26,7 +26,15 @@ $border-color: #dcd6ce;
 $font-body: 'Quicksand', sans-serif;
 $font-heading: 'Quicksand', sans-serif;
 
-/* Global Resets & Typography */
+/* ==========================================================================
+   Global Resets & Typography
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     background-color: $book-bg;
     color: $ink-color;
@@ -36,7 +44,9 @@ body {
     margin: 0;
 }
 
-/* Page Header - Title Page Style */
+/* ==========================================================================
+   Page Header - Title Page Style
+   ========================================================================== */
 .page-header {
     background-color: $book-bg;
     background-image: none;
@@ -56,7 +66,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     text-shadow: 2px 2px 0px rgba($ouk-gold, 0.2);
-    /* Subtle Gold Shadow */
 }
 
 .project-tagline {
@@ -68,7 +77,9 @@ body {
     margin-top: 1rem;
 }
 
-/* Main Content - The Page */
+/* ==========================================================================
+   Main Content - The Page
+   ========================================================================== */
 .main-content {
     max-width: 800px;
     margin: 0 auto 5rem;
@@ -77,13 +88,11 @@ body {
     box-shadow:
         0 1px 1px rgba(0, 0, 0, 0.15),
         0 10px 0 -5px $ouk-teal-dark,
-        /* Subtle teal hint in shadow stack */
         0 10px 1px -4px rgba(0, 0, 0, 0.15),
         0 20px 0 -10px $book-bg,
         0 20px 1px -9px rgba(0, 0, 0, 0.15);
     border: 1px solid #e6e6e6;
     border-top: 4px solid $ouk-gold;
-    /* Gold top edge */
 
     /* Typography within content */
     h1,
@@ -128,6 +137,9 @@ body {
         margin-bottom: 1.5rem;
         text-align: justify;
         text-justify: inter-word;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
     }
 
     /* Links */
@@ -153,7 +165,6 @@ body {
 
     ul {
         list-style-type: square;
-        /* Slightly sharper bullet */
     }
 
     ul li::marker {
@@ -171,7 +182,6 @@ body {
         font-size: 1.3rem;
         border-left: 4px solid $ouk-gold;
         background-color: rgba($ouk-gold, 0.05);
-        /* Very light gold tint */
         padding: 1rem 1rem 1rem 2rem;
         margin: 2rem 0;
         color: $ouk-teal-dark;
@@ -219,7 +229,6 @@ body {
         max-width: 100%;
         margin: 2rem auto;
         border: 4px solid $ouk-gold;
-        /* Gold frame */
         padding: 0;
         background: #fff;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -247,7 +256,9 @@ body {
     }
 }
 
-/* Print Styles */
+/* ==========================================================================
+   Print & Responsive Styles
+   ========================================================================== */
 @media print {
     body {
         background-color: #fff;
@@ -261,7 +272,6 @@ body {
     }
 }
 
-/* Responsiveness */
 @media screen and (max-width: 768px) {
     .main-content {
         padding: 2rem;
@@ -270,5 +280,21 @@ body {
 
     .project-name {
         font-size: 2.5rem;
+    }
+
+    /* Drop Cap (Manuscript Flair) */
+    p.has-drop-cap::first-letter {
+        float: left;
+        font-family: $font-heading;
+        font-size: 4.2rem;
+        font-weight: 700;
+        color: $ouk-teal-dark;
+        line-height: 0.85;
+        /* Keeps the big letter flush with the text */
+        margin: 0.05em 0.12em 0 0;
+        /* Creates breathing room around the letter */
+        text-transform: uppercase;
+        text-shadow: 2px 2px 0px rgba($ouk-gold, 0.4);
+        /* Subtle gold accent */
     }
 }

@@ -1,4 +1,6 @@
-/* Book Design - OUK Colors (Teal & Gold) with Quicksand Font */
+/* ==========================================================================
+   Book Design - OUK Colors (Teal & Metallic Gold) with Quicksand Font
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 :root {
@@ -13,26 +15,38 @@
     --ouk-teal: #037b90;
     /* Primary Teal */
     --ouk-gold: #d4af37;
-    /* Gold Accent */
+    /* Metallic Gold Accent */
     --ouk-teal-dark: #025f70;
     /* Heading Text */
-
     --border-color: #dcd6ce;
+
+    /* Typography */
     --font-body: 'Quicksand', sans-serif;
     --font-heading: 'Quicksand', sans-serif;
 }
 
-/* Reset & Global */
+/* ==========================================================================
+   Reset & Global
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--book-bg);
     color: var(--ink-color);
     font-family: var(--font-body);
     font-size: 20px;
+    /* Nice, readable base size for a "book" */
     line-height: 1.6;
     margin: 0;
 }
 
-/* Page Header */
+/* ==========================================================================
+   Page Header
+   ========================================================================== */
 .page-header {
     background-color: var(--book-bg);
     background-image: none;
@@ -59,27 +73,33 @@ body {
     font-weight: 400;
     font-style: italic;
     font-size: 1.4rem;
-    color: rgba(2, 95, 112, 0.8);
+    /* Used hex with transparency for better browser support */
+    color: #025f70cc;
     margin-top: 1rem;
 }
 
-/* Main Content */
+/* ==========================================================================
+   Main Content (The "Pages")
+   ========================================================================== */
 .main-content {
     max-width: 800px;
     margin: 0 auto 5rem;
     padding: 5rem 6rem;
     background-color: var(--paper-bg);
+    border: 1px solid #e6e6e6;
+    border-top: 4px solid var(--ouk-gold);
+    /* Stacked Paper Effect */
     box-shadow:
         0 1px 1px rgba(0, 0, 0, 0.15),
         0 10px 0 -5px var(--ouk-teal-dark),
         0 10px 1px -4px rgba(0, 0, 0, 0.15),
         0 20px 0 -10px var(--book-bg),
         0 20px 1px -9px rgba(0, 0, 0, 0.15);
-    border: 1px solid #e6e6e6;
-    border-top: 4px solid var(--ouk-gold);
 }
 
-/* Typography */
+/* ==========================================================================
+   Typography & Flow
+   ========================================================================== */
 .main-content h1,
 .main-content h2,
 .main-content h3,
@@ -119,22 +139,26 @@ body {
     margin-bottom: 1.5rem;
     text-align: justify;
     text-justify: inter-word;
+    /* Hyphenation prevents ugly gaps in justified text */
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
 }
 
-/* Links */
+/* ==========================================================================
+   Links, Lists, & Quotes
+   ========================================================================== */
 .main-content a {
     color: var(--ouk-teal);
     text-decoration: underline;
     text-decoration-color: var(--ouk-gold);
     transition: color 0.2s;
-    border-bottom: none;
 }
 
 .main-content a:hover {
     color: var(--ouk-gold);
 }
 
-/* Lists */
 .main-content ul {
     list-style-type: square;
     padding-left: 2.5rem;
@@ -149,20 +173,21 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* Blockquotes */
 .main-content blockquote {
     font-family: var(--font-heading);
     font-size: 1.3rem;
     border-left: 4px solid var(--ouk-gold);
     background-color: rgba(212, 175, 55, 0.05);
+    /* Soft gold tint */
     padding: 1rem 1rem 1rem 2rem;
     margin: 2rem 0;
     color: var(--ouk-teal-dark);
     font-style: italic;
-    border-radius: 0;
 }
 
-/* Tables */
+/* ==========================================================================
+   Tables & Images
+   ========================================================================== */
 .main-content table {
     width: 100%;
     margin: 2rem 0;
@@ -191,9 +216,9 @@ body {
 
 .main-content tr:nth-child(even) {
     background-color: rgba(3, 123, 144, 0.03);
+    /* Soft teal tint */
 }
 
-/* Images */
 .main-content img {
     display: block;
     max-width: 100%;
@@ -204,7 +229,9 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer */
+/* ==========================================================================
+   Footer
+   ========================================================================== */
 .site-footer {
     border-top: 1px solid var(--ouk-gold);
     margin-top: 4rem;
@@ -219,6 +246,21 @@ body {
     color: var(--ouk-teal);
 }
 
+/* ==========================================================================
+   Media Queries (Responsive & Print)
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    .main-content {
+        padding: 2rem;
+        /* Width is safely handled by max-width now that box-sizing is fixed */
+    }
+
+    .project-name {
+        font-size: 2.2rem;
+        /* Scaled down slightly more for mobile */
+    }
+}
+
 @media print {
     body {
         background-color: #fff;
@@ -229,16 +271,5 @@ body {
         border: none;
         padding: 0;
         max-width: 100%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .main-content {
-        padding: 2rem;
-        width: 100%;
-    }
-
-    .project-name {
-        font-size: 2.5rem;
     }
 }

@@ -1,3 +1,16 @@
-theme: jekyll-theme-cayman
 title: OUK PT SOP
 description: Part-Time Lecturers Standard Operating Procedure
+theme: jekyll-theme-cayman
+
+# Site Settings
+url: "https://devogee.github.io"
+baseurl: "/OUK-PT-SOP"
+show_downloads: true
+
+# Analytics (Enter your tracking ID here when ready, e.g., "G-XXXXXXXXXX")
+google_analytics: ""
+
+# Recommended GitHub Pages Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
