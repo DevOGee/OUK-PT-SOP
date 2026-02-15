@@ -3,19 +3,25 @@
 /* Import Bookish Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
-/* Book Design Variables */
+/* OUK Book Design Variables */
 $book-bg: #f2efe9;
-/* Soft parchment background for the body */
+/* Soft parchment background */
 $paper-bg: #fdfbf7;
-/* Slightly brighter paper color for content */
+/* Slightly brighter paper color */
 $ink-color: #2b2b2b;
-/* Soft Black for text */
-$accent-color: #800000;
-/* Eraser dust / Burgundy accent */
-$link-color: #000080;
-/* Traditional Navy Link */
+/* Soft Black for body text */
+
+/* OUK Colors */
+$ouk-teal: #037b90;
+/* Primary OUK Teal */
+$ouk-gold: #d4af37;
+/* Classic Metallic Gold */
+$ouk-teal-dark: #025f70;
+/* Darker shade for text/headings */
+
+$link-color: $ouk-teal;
+$accent-color: $ouk-gold;
 $border-color: #dcd6ce;
-/* Subtle darker edge */
 
 $font-body: 'Crimson Text', serif;
 $font-heading: 'Playfair Display', serif;
@@ -34,11 +40,11 @@ body {
 .page-header {
     background-color: $book-bg;
     background-image: none;
-    /* Remove any theme gradients */
-    color: $ink-color;
+    color: $ouk-teal-dark;
     padding: 6rem 2rem 4rem;
     text-align: center;
-    border-bottom: 4px double $ink-color;
+    border-bottom: 6px double $ouk-gold;
+    /* Gold double border */
     margin-bottom: 2rem;
 }
 
@@ -47,11 +53,11 @@ body {
     font-weight: 700;
     font-size: 3.5rem;
     margin-bottom: 0.5rem;
-    color: $ink-color;
+    color: $ouk-teal-dark;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    text-shadow: none;
-    /* Remove playful shadow */
+    text-shadow: 2px 2px 0px rgba($ouk-gold, 0.2);
+    /* Subtle Gold Shadow */
 }
 
 .project-tagline {
@@ -59,7 +65,7 @@ body {
     font-weight: 400;
     font-style: italic;
     font-size: 1.4rem;
-    color: lighten($ink-color, 20%);
+    color: rgba($ouk-teal-dark, 0.8);
     margin-top: 1rem;
 }
 
@@ -71,12 +77,14 @@ body {
     background-color: $paper-bg;
     box-shadow:
         0 1px 1px rgba(0, 0, 0, 0.15),
-        0 10px 0 -5px #eee,
+        0 10px 0 -5px $ouk-teal-dark,
+        /* Subtle teal hint in shadow stack */
         0 10px 1px -4px rgba(0, 0, 0, 0.15),
-        0 20px 0 -10px #eee,
+        0 20px 0 -10px $book-bg,
         0 20px 1px -9px rgba(0, 0, 0, 0.15);
-    /* Stacked paper effect */
     border: 1px solid #e6e6e6;
+    border-top: 4px solid $ouk-gold;
+    /* Gold top edge */
 
     /* Typography within content */
     h1,
@@ -86,7 +94,7 @@ body {
     h5,
     h6 {
         font-family: $font-heading;
-        color: $ink-color;
+        color: $ouk-teal-dark;
         margin-top: 2.5rem;
         margin-bottom: 1rem;
         line-height: 1.25;
@@ -96,29 +104,27 @@ body {
     h1 {
         font-size: 2.5rem;
         text-align: center;
-        border-bottom: 1px solid #aaa;
+        border-bottom: 1px solid $ouk-gold;
         padding-bottom: 1rem;
         margin-top: 1rem;
     }
 
     h2 {
         font-size: 2rem;
-        border-bottom: 1px solid $ink-color;
+        border-bottom: 2px solid $ouk-gold;
         padding-bottom: 0.5rem;
         display: block;
-        /* Ensure full width */
         width: 100%;
         background: none;
-        /* Remove playful background */
         border-radius: 0;
     }
 
     h3 {
         font-size: 1.6rem;
         font-style: italic;
+        color: $ouk-teal;
     }
 
-    /* Justified text for book feel */
     p {
         margin-bottom: 1.5rem;
         text-align: justify;
@@ -127,16 +133,15 @@ body {
 
     /* Links */
     a {
-        color: $link-color;
+        color: $ouk-teal;
         text-decoration: underline;
+        text-decoration-color: $ouk-gold;
         border-bottom: none;
-        /* Remove playful border */
         transition: color 0.2s;
 
         &:hover {
-            color: $accent-color;
+            color: $ouk-gold;
             background: none;
-            /* Remove playful background */
         }
     }
 
@@ -148,39 +153,29 @@ body {
     }
 
     ul {
-        list-style-type: disc;
+        list-style-type: square;
+        /* Slightly sharper bullet */
+    }
+
+    ul li::marker {
+        color: $ouk-gold;
     }
 
     li {
         margin-bottom: 0.5rem;
-        background: none;
-        /* Remove playful cards */
         padding: 0;
-        box-shadow: none;
-        border-radius: 0;
-
-        &::before {
-            content: none;
-            /* Remove emojis */
-        }
-
-        &:hover {
-            transform: none;
-            box-shadow: none;
-            background: none;
-        }
     }
 
     /* Blockquotes */
     blockquote {
         font-family: $font-heading;
         font-size: 1.3rem;
-        border-left: 4px solid $accent-color;
-        background-color: transparent;
-        /* Remove playful background */
-        padding: 0.5rem 0 0.5rem 2rem;
+        border-left: 4px solid $ouk-gold;
+        background-color: rgba($ouk-gold, 0.05);
+        /* Very light gold tint */
+        padding: 1rem 1rem 1rem 2rem;
         margin: 2rem 0;
-        color: lighten($ink-color, 15%);
+        color: $ouk-teal-dark;
         font-style: italic;
         border-radius: 0;
     }
@@ -190,28 +185,32 @@ body {
         width: 100%;
         margin: 2rem 0;
         border-collapse: collapse;
-        border: 2px solid $ink-color;
-        /* Solid simple border */
+        border: 2px solid $ouk-teal;
         border-radius: 0;
         overflow: visible;
 
         th,
         td {
             padding: 1rem;
-            border: 1px solid #ccc;
+            border: 1px solid $border-color;
             text-align: left;
             background: none;
         }
 
         th {
-            background-color: #eee;
-            /* Simple grey header */
-            color: $ink-color;
+            background-color: $ouk-teal;
+            color: #fff;
             font-family: $font-heading;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             font-size: 0.9rem;
+            border: 1px solid $ouk-teal;
+        }
+
+        /* Alternate rows */
+        tr:nth-child(even) {
+            background-color: rgba($ouk-teal, 0.03);
         }
     }
 
@@ -220,12 +219,12 @@ body {
         display: block;
         max-width: 100%;
         margin: 2rem auto;
-        border: 1px solid #ddd;
-        padding: 5px;
+        border: 4px solid $ouk-gold;
+        /* Gold frame */
+        padding: 0;
         background: #fff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         border-radius: 0;
-        /* No rounded corners */
         transition: none;
 
         &:hover {
@@ -233,18 +232,18 @@ body {
         }
     }
 
-    /* Footer within main content if present */
+    /* Footer within main content */
     .site-footer {
-        border-top: 1px solid #ccc;
+        border-top: 1px solid $ouk-gold;
         margin-top: 4rem;
         padding-top: 2rem;
         text-align: center;
         font-size: 0.9rem;
         font-style: italic;
-        color: #666;
+        color: $ouk-teal-dark;
 
         a {
-            color: $ink-color;
+            color: $ouk-teal;
         }
     }
 }
@@ -268,7 +267,6 @@ body {
     .main-content {
         padding: 2rem;
         width: 100%;
-        box-sizing: border-box;
     }
 
     .project-name {
