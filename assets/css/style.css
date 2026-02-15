@@ -1,5 +1,5 @@
-/* Book Design - OUK Colors (Teal & Gold) */
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+/* Book Design - OUK Colors (Teal & Gold) with Quicksand Font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 :root {
     --book-bg: #f2efe9;
@@ -18,8 +18,8 @@
     /* Heading Text */
 
     --border-color: #dcd6ce;
-    --font-body: 'Crimson Text', serif;
-    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Quicksand', sans-serif;
+    --font-heading: 'Quicksand', sans-serif;
 }
 
 /* Reset & Global */
