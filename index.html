@@ -1,391 +1,765 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>PART-TIME LECTURERS – STANDARD OPERATING PROCEDURE (SOP)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Official Standard Operating Procedure (SOP) for Part-Time Lecturers at OUK. A professional digital handbook." />
+  <title>Faculty Handbook: PT SOP | OUK</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+  <!-- Google Fonts: Editorial Serif & Modern Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
   <style>
-    /* ==========================================================================
-           Book Design CSS (Compiled from SCSS)
-           ========================================================================== */
     :root {
-      --book-bg: #f2efe9;
+      --primary: #037b90;
+      /* OUK Teal */
+      --primary-dark: #025f70;
+      --accent: #d4af37;
+      /* OUK Gold */
       --paper-bg: #fdfbf7;
-      --ink-color: #2b2b2b;
-      --ouk-teal: #037b90;
-      --ouk-gold: #d4af37;
-      --ouk-teal-dark: #025f70;
-      --border-color: #dcd6ce;
-      --font-body: 'Quicksand', sans-serif;
-      --font-heading: 'Quicksand', sans-serif;
+      /* Warm Paper */
+      --book-bg: #f2efe9;
+      /* Desktop/Outer Bg */
+      --ink: #2b2b2b;
+      --ink-light: #5a5a5a;
+      --border-sep: #dcd6ce;
+      --max-width: 850px;
+      --transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
-    *,
-    *::before,
-    *::after {
+    * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
     body {
       background-color: var(--book-bg);
-      color: var(--ink-color);
-      font-family: var(--font-body);
+      font-family: 'EB Garamond', serif;
+      color: var(--ink);
+      line-height: 1.75;
       font-size: 20px;
-      line-height: 1.6;
-      margin: 0;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    .page-header {
-      background-color: var(--book-bg);
-      color: var(--ouk-teal-dark);
-      padding: 6rem 2rem 4rem;
-      text-align: center;
-      border-bottom: 6px double var(--ouk-gold);
-      margin-bottom: 2rem;
-    }
-
-    .project-name {
-      font-family: var(--font-heading);
-      font-weight: 700;
-      font-size: 3.5rem;
-      margin-bottom: 0.5rem;
-      color: var(--ouk-teal-dark);
+    h1,
+    h2,
+    h3,
+    .sans {
+      font-family: 'Outfit', sans-serif;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      text-shadow: 2px 2px 0px rgba(212, 175, 55, 0.2);
+      letter-spacing: 0.1em;
     }
 
-    .project-tagline {
-      font-family: var(--font-body);
-      font-weight: 400;
-      font-style: italic;
-      font-size: 1.4rem;
-      color: rgba(2, 95, 112, 0.8);
-      margin-top: 1rem;
+    /* Layout Containers */
+    .book-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem;
     }
 
-    .main-content {
-      max-width: 800px;
-      margin: 0 auto 5rem;
-      padding: 5rem 6rem;
-      background-color: var(--paper-bg);
-      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 10px 0 -5px var(--ouk-teal-dark), 0 10px 1px -4px rgba(0, 0, 0, 0.15), 0 20px 0 -10px var(--book-bg), 0 20px 1px -9px rgba(0, 0, 0, 0.15);
-      border: 1px solid #e6e6e6;
-      border-top: 4px solid var(--ouk-gold);
-    }
-
-    .main-content h1,
-    .main-content h2,
-    .main-content h3 {
-      font-family: var(--font-heading);
-      color: var(--ouk-teal-dark);
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      line-height: 1.25;
-      font-weight: 700;
-    }
-
-    .main-content h2 {
-      font-size: 2rem;
-      border-bottom: 2px solid var(--ouk-gold);
-      padding-bottom: 0.5rem;
-      display: block;
+    .book-container {
       width: 100%;
+      max-width: var(--max-width);
+      background-color: var(--paper-bg);
+      box-shadow:
+        0 1px 1px rgba(0, 0, 0, 0.1),
+        0 10px 0 -5px var(--paper-bg),
+        0 10px 1px -4px rgba(0, 0, 0, 0.1),
+        0 20px 0 -10px var(--paper-bg),
+        0 30px 40px -15px rgba(0, 0, 0, 0.15);
+      border: 1px solid var(--border-sep);
+      min-height: 85vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
     }
 
-    .main-content p {
-      margin-bottom: 1.5rem;
-      text-align: justify;
-      text-justify: inter-word;
-      hyphens: auto;
+    /* Chapter/Slide System */
+    .slide {
+      display: none;
+      padding: 5rem 6.5rem;
+      flex: 1;
+      animation: slideIn 0.8s ease-out forwards;
     }
 
-    /* Drop Cap Style */
-    p.has-drop-cap::first-letter {
-      float: left;
-      font-family: var(--font-heading);
-      font-size: 4.2rem;
-      font-weight: 700;
-      color: var(--ouk-teal-dark);
-      line-height: 0.85;
-      margin: 0.05em 0.12em 0 0;
-      text-transform: uppercase;
-      text-shadow: 2px 2px 0px rgba(212, 175, 55, 0.4);
+    .slide.active {
+      display: flex;
+      flex-direction: column;
     }
 
-    .main-content a {
-      color: var(--ouk-teal);
-      text-decoration: underline;
-      text-decoration-color: var(--ouk-gold);
-      transition: color 0.2s;
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
-    .main-content a:hover {
-      color: var(--ouk-gold);
+    /* Progress Indicator */
+    .reader-progress {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(212, 175, 55, 0.05);
+      z-index: 10;
     }
 
-    .main-content ul,
-    .main-content ol {
-      margin-bottom: 1.5rem;
-      padding-left: 2.5rem;
+    #progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      transition: width 0.6s cubic-bezier(0.19, 1, 0.22, 1);
     }
 
-    .main-content ul {
-      list-style-type: square;
+    /* Cover Styling - Enhanced Ebook Look */
+    .cover-slide {
+      padding: 4rem 4rem !important;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to bottom, #fffdfa 0%, var(--paper-bg) 100%);
     }
 
-    .main-content ul li::marker {
-      color: var(--ouk-gold);
+    .cover-frame {
+      border: 1px solid var(--border-sep);
+      padding: 4rem 3rem;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      background: rgba(255, 255, 255, 0.4);
     }
 
-    .main-content li {
-      margin-bottom: 0.5rem;
+    /* Corner accents for the cover frame */
+    .cover-frame::before,
+    .cover-frame::after {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border: 2px solid var(--accent);
     }
 
-    /* Table of Contents Specific Styling */
-    .toc-box {
-      background-color: rgba(212, 175, 55, 0.05);
-      border-left: 4px solid var(--ouk-gold);
-      padding: 1.5rem 2rem;
+    .cover-frame::before {
+      top: -2px;
+      left: -2px;
+      border-right: 0;
+      border-bottom: 0;
+    }
+
+    .cover-frame::after {
+      bottom: -2px;
+      right: -2px;
+      border-left: 0;
+      border-top: 0;
+    }
+
+    .university-mark {
+      height: 110px;
+      /* Increased logo size */
+      width: auto;
       margin-bottom: 3rem;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05));
     }
 
-    .toc-box h3 {
-      margin-top: 0;
-      font-size: 1.2rem;
+    .publish-series {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      color: var(--accent);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.3em;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      opacity: 0.8;
     }
 
-    .toc-box ul {
-      list-style-type: none;
-      padding-left: 0;
+    .handbook-title {
+      font-size: 4rem;
+      line-height: 1.05;
+      color: var(--primary-dark);
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      max-width: 90%;
     }
 
-    .toc-box ul li {
-      margin-bottom: 0.8rem;
+    .handbook-subtitle {
+      font-size: 1.35rem;
+      color: var(--ink-light);
+      font-weight: 400;
+      margin-bottom: 3rem;
+      font-family: 'Outfit', sans-serif;
+      text-align: center;
+      letter-spacing: 0.15em;
+      opacity: 0.7;
     }
 
-    .toc-box ul li a {
-      text-decoration: none;
+    .accent-divider {
+      width: 140px;
+      height: 4px;
+      background: linear-gradient(to right, transparent, var(--accent), transparent);
+      margin: 0 auto 3rem;
+    }
+
+    .edition-info {
+      margin-top: auto;
+      font-style: italic;
+      font-size: 1rem;
+      opacity: 0.6;
       font-weight: 500;
     }
 
-    .site-footer {
-      border-top: 1px solid var(--ouk-gold);
-      margin-top: 4rem;
-      padding-top: 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-      font-style: italic;
-      color: var(--ouk-teal-dark);
+    /* Typography Details */
+    .drop-cap::first-letter {
+      float: left;
+      font-family: 'Outfit', sans-serif;
+      font-size: 4.8rem;
+      line-height: 0.8;
+      padding: 0.1em 0.1em 0 0;
+      color: var(--primary);
+      font-weight: 700;
     }
 
-    @media screen and (max-width: 768px) {
-      .main-content {
-        padding: 2rem;
-        width: 100%;
+    /* Table of Contents - Clean Modern Index */
+    .contents-index {
+      margin-top: 3rem;
+      padding: 3rem;
+      width: 100%;
+      background: rgba(212, 175, 55, 0.02);
+      border: 1px solid var(--border-sep);
+    }
+
+    .contents-index h2 {
+      font-size: 1.2rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      color: var(--accent);
+    }
+
+    .contents-index ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .contents-index li {
+      display: flex;
+      align-items: baseline;
+    }
+
+    .contents-index li a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border-bottom: 1px dotted transparent;
+    }
+
+    .contents-index li a:hover {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+      padding-left: 10px;
+    }
+
+    .contents-index .dot-leader {
+      flex: 1;
+      border-bottom: 1px dotted var(--border-sep);
+      margin: 0 15px;
+    }
+
+    .contents-index .num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Slide Design */
+    .chapter-heading {
+      margin-bottom: 3.5rem;
+      border-bottom: 1px solid var(--border-sep);
+      padding-bottom: 2rem;
+    }
+
+    .chapter-label {
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+    }
+
+    .slide h2 {
+      font-size: 2.8rem;
+      color: var(--primary-dark);
+      text-transform: none;
+      letter-spacing: normal;
+      margin-bottom: 0.5rem;
+    }
+
+    .slide p {
+      margin-bottom: 1.8rem;
+      text-align: justify;
+    }
+
+    .slide h3 {
+      font-size: 1.2rem;
+      margin: 3rem 0 1.5rem;
+      color: var(--primary);
+      border-bottom: 1px solid var(--border-sep);
+      padding-bottom: 0.5rem;
+    }
+
+    /* List Design */
+    .slide ul,
+    .slide ol {
+      margin: 1.5rem 0 2.5rem 1.5rem;
+      list-style-type: none;
+    }
+
+    .slide li {
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .slide ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 1.8rem;
+      line-height: 1;
+      top: -4px;
+    }
+
+    /* Editorial blocks */
+    .editorial-note {
+      background-color: #fffaf4;
+      border-left: 4px solid var(--accent);
+      padding: 2rem;
+      margin: 3.5rem 0;
+      font-style: italic;
+      color: var(--ink-light);
+    }
+
+    .editorial-note strong {
+      color: var(--primary-dark);
+      font-style: normal;
+      font-family: 'Outfit', sans-serif;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      display: block;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.1em;
+    }
+
+    /* Navigation Buttons */
+    .nav-controls {
+      padding: 2.5rem 6.5rem;
+      border-top: 1px solid var(--border-sep);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+    }
+
+    .nav-btn {
+      font-family: 'Outfit', sans-serif;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      padding: 1rem 2rem;
+      border: 1px solid var(--border-sep);
+      background: white;
+      color: var(--ink-light);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: var(--transition);
+      border-radius: 4px;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--paper-bg);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-btn.primary {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .nav-btn.primary:hover {
+      background: var(--primary-dark);
+      border-color: var(--primary-dark);
+      color: white;
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.2;
+      cursor: not-allowed;
+    }
+
+    .chapter-info {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
+
+    /* Links */
+    a {
+      color: var(--primary);
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .book-wrapper {
+        padding: 0;
       }
 
-      .project-name {
-        font-size: 2.5rem;
+      .book-container {
+        border-radius: 0;
+        min-height: 100vh;
+        border: none;
+      }
+
+      .slide {
+        padding: 4rem 2rem;
+      }
+
+      .nav-controls {
+        padding: 1.5rem 2rem;
+      }
+
+      .handbook-title {
+        font-size: 2.8rem;
+      }
+
+      .university-mark {
+        height: 80px;
       }
     }
   </style>
 </head>
 
 <body>
-  <header class="page-header">
-    <h1 class="project-name">Part-Time Lecturers</h1>
-    <p class="project-tagline">Standard Operating Procedure (SOP)</p>
-  </header>
 
-  <div class="main-content">
+  <div class="book-wrapper">
+    <main class="book-container">
+      <div class="reader-progress">
+        <div id="progress-fill"></div>
+      </div>
 
-    <div class="toc-box">
-      <h3>Table of Contents</h3>
-      <ul>
-        <li><a href="#on-boarding">1. On-Boarding</a></li>
-        <li><a href="#facilitation-teaching">2. Facilitation / Teaching</a></li>
-        <li><a href="#assessment">3. Assessment</a></li>
-        <li><a href="#examination-marks-capture">4. Examination Marks Capture</a></li>
-        <li><a href="#preparing-for-a-new-cohort">5. Preparing for a New Cohort</a></li>
-      </ul>
-    </div>
+      <!-- Slide 0: Better Ebook Front Cover -->
+      <section class="slide cover-slide active" id="slide-0">
+        <div class="cover-frame">
+          <p class="publish-series">Academic Publication Series</p>
+          <img src="https://ouk.ac.ke/sites/default/files/gallery/logo_footer.png" alt="OUK" class="university-mark" />
 
-    <p class="has-drop-cap">Welcome to the official Standard Operating Procedure for part-time lecturers at OUK. This
-      checklist ensures a smooth transition through onboarding, teaching, and assessment workflows.</p>
+          <h1 class="handbook-title">Part-Time Lecturers</h1>
+          <p class="handbook-subtitle">Standard Operating Procedure</p>
 
-    <h2 id="on-boarding"><strong>1. On-Boarding</strong></h2>
-    <p><strong>Administrative &amp; System Setup</strong></p>
-    <ul>
-      <li>
-        <p>Receive and sign PT Contract Letter.</p>
-      </li>
-      <li>
-        <p>Activate official OUK email (ICT onboarding required) from your personal email account.</p>
-      </li>
-      <li>
-        <p>Obtain MyOUK login credentials from your OUK email account.</p>
-      </li>
-      <li>
-        <p>Instructor mapping by HoD.</p>
-      </li>
-      <li>
-        <p>Access to SOMAS LMS.</p>
-      </li>
-      <li>
-        <p>Accept the Zoom teaching licence from your OUK email account and sign up for zoom.</p>
-      </li>
-      <li>
-        <p>Configure Zoom Live Class links inside SOMAS LMS.</p>
-      </li>
-      <li>
-        <p>Enable and configure Panopto block on LMS.</p>
-      </li>
-      <li>
-        <p>Set up Panopto User Settings profile via web client: <a
-            href="https://ouk.cloud.panopto.eu/Panopto/Pages/Home.aspx"><u>https://ouk.cloud.panopto.eu/Panopto/Pages/Home.aspx</u></a>
-        </p>
-      </li>
-      <li>
-        <p>Confirm assigned timetable slots. <a
-            href="https://ouk.ac.ke/timetable"><u>https://ouk.ac.ke/timetable</u></a></p>
-      </li>
-      <li>
-        <p>Submit passport-size photo (official records &amp; University profile).</p>
-      </li>
-    </ul>
-    <p>Outcome: Full system access before teaching begins.</p>
+          <div class="accent-divider"></div>
 
-    <h2 id="facilitation-teaching"><strong>2. Facilitation / Teaching</strong></h2>
-    <p><strong>Pre-Teaching Checks</strong></p>
-    <ul>
-      <li>
-        <p>Review your course on the LMS before students access it.</p>
-      </li>
-      <li>
-        <p>Validate:</p>
+          <p style="font-family: 'Outfit'; font-size: 0.9rem; letter-spacing: 0.2em; opacity: 0.8;">OFFICIAL HANDBOOK
+          </p>
+
+          <p class="edition-info">Faculty Edition &bull; 2026</p>
+
+          <button class="nav-btn primary" onclick="nextSlide()" style="margin-top: 3rem;">
+            Begin Reading &rarr;
+          </button>
+        </div>
+      </section>
+
+      <!-- Slide 1: Contents (New dedicated slide for better ebook feel) -->
+      <section class="slide" id="slide-1">
+        <div class="chapter-heading">
+          <p class="chapter-label">FRONT MATTER</p>
+          <h2>Table of Contents</h2>
+        </div>
+
+        <p class="drop-cap">This handbook serves as the definitive guide for part-time faculty at the Open University of
+          Kenya. Each chapter is designed to provide clarity on administrative requirements and digital workflow
+          standards.</p>
+
+        <nav class="contents-index">
+          <ul>
+            <li><a onclick="goToSlide(2)">I. On-Boarding Procedures</a><span class="dot-leader"></span><span
+                class="num">01</span></li>
+            <li><a onclick="goToSlide(3)">II. Facilitation & Teaching Workflow</a><span class="dot-leader"></span><span
+                class="num">04</span></li>
+            <li><a onclick="goToSlide(4)">III. Academic Assessment Guidelines</a><span class="dot-leader"></span><span
+                class="num">07</span></li>
+            <li><a onclick="goToSlide(5)">IV. Examination Marks Capture</a><span class="dot-leader"></span><span
+                class="num">10</span></li>
+            <li><a onclick="goToSlide(6)">V. Course Renewal & Evaluation</a><span class="dot-leader"></span><span
+                class="num">12</span></li>
+          </ul>
+        </nav>
+      </section>
+
+      <!-- Slide 2: On-Boarding -->
+      <section class="slide" id="slide-2">
+        <div class="chapter-heading">
+          <p class="chapter-label">CHAPTER I</p>
+          <h2>On-Boarding Milestones</h2>
+        </div>
+
+        <p>Before instruction can commence, the University requires the completion of several vital administrative and
+          technical milestones.</p>
+
+        <h3>Administrative Setup</h3>
         <ul>
-          <li>
-            <p>Content accuracy</p>
-          </li>
-          <li>
-            <p>Links</p>
-          </li>
-          <li>
-            <p>Activity settings</p>
-          </li>
+          <li>Receipt and signing of the <strong>PT Contract Letter</strong>.</li>
+          <li>Activation of the official <strong>OUK Faculty Email</strong> via ICT portal.</li>
+          <li>Submission of a professional passport photograph.</li>
         </ul>
-      </li>
-      <li>
-        <p>Flag errors for update immediately.</p>
-      </li>
-    </ul>
-    <p><strong>LMS Course Configuration</strong></p>
-    <ul>
-      <li>
-        <p>Set appropriate <strong>restriction settings</strong> (date, groups, conditional access).</p>
-      </li>
-      <li>
-        <p>Configure <strong>completion tracking conditions</strong> for activities.</p>
-      </li>
-    </ul>
-    <p><strong>Compliance &amp; Policy Requirements</strong></p>
-    <ul>
-      <li>
-        <p><strong>Do NOT delete any content from the LMS.</strong> Deletion of course materials violates institutional
-          policy.</p>
-      </li>
-      <li>
-        <p>Course materials <strong>must not be shared outside the LMS</strong> (e.g., email, WhatsApp, external
-          drives). All teaching and learning resources must remain strictly within the SOMAS LMS environment.</p>
-      </li>
-      <li>
-        <p>For any required changes, escalations, or clarifications, formally reach out to the HoD or ICT support team.
-        </p>
-      </li>
-    </ul>
-    <p>Objective: Clean, structured, student-ready course shell.</p>
 
-    <h2 id="assessment"><strong>3. Assessment</strong></h2>
-    <p><strong>Gradebook &amp; Activities</strong></p>
-    <ul>
-      <li>
-        <p>Configure Gradebook categories and weightings (CATTs-50% &amp; Final Exam-50%)</p>
-      </li>
-      <li>
-        <p>Ensure assignment rubrics and marking guides are set.</p>
-      </li>
-      <li>
-        <p>Grade all assignments within the LMS.</p>
-      </li>
-    </ul>
-    <p><strong>Examinations</strong></p>
-    <ul>
-      <li>
-        <p>Prepare two versions of the exam (Mid-Session &amp; End of Session).</p>
-      </li>
-      <li>
-        <p>Digitize both exams in the LMS.</p>
-      </li>
-      <li>
-        <p>Conduct moderation strictly within LMS (no soft copy moderation).</p>
-      </li>
-      <li>
-        <p>Manage Exam invigilation through LMS tools.</p>
-      </li>
-      <li>
-        <p>Handle real-time exam troubleshooting during the sitting.</p>
-      </li>
-    </ul>
-    <p>Compliance with digital workflow is mandatory.</p>
-
-    <h2 id="examination-marks-capture"><strong>4. Examination Marks Capture</strong></h2>
-    <p><strong>Marks Processing Workflow</strong></p>
-    <ol type="1">
-      <li>
-        <p>Download final marks from SOMAS Gradebook (CATTs &amp; Final Exam)</p>
-      </li>
-      <li>
-        <p>Log into MyOUK → Examination → Marks Capture screen</p>
-      </li>
-      <li>
-        <p>Select your course → Generate exam list.</p>
-      </li>
-      <li>
-        <p>Enter marks manually <strong>OR</strong></p>
+        <h3>Technical Integration</h3>
         <ul>
-          <li>Use system-generated <strong>Excel template</strong> for bulk upload.</li>
+          <li>Acquisition of <strong>MyOUK login credentials</strong>.</li>
+          <li>Verification of <strong>SOMAS LMS</strong> access.</li>
+          <li>Acceptance of the <strong>Zoom Teaching Licence</strong>.</li>
+          <li>Configuration of the <strong>Panopto</strong> web client.</li>
         </ul>
-      </li>
-      <li>
-        <p>Submit final marks (official submission).</p>
-      </li>
-      <li>
-        <p>Download submission report as proof.</p>
-      </li>
-      <li>
-        <p>Share report with HoD.</p>
-      </li>
-    </ol>
-    <p>No marks are considered submitted without system confirmation.</p>
 
-    <h2 id="preparing-for-a-new-cohort"><strong>5. Preparing for a New Cohort</strong></h2>
-    <p><em>(Add steps for resetting or preparing the course for the next intake here...)</em></p>
+        <div class="editorial-note">
+          <strong>FACULTY REQUIREMENT</strong>
+          Full system access must be validated at least seven days prior to the commencement of teaching.
+        </div>
+      </section>
 
-    <footer class="site-footer">
-      <span class="site-footer-owner">OUK PT SOP is maintained by <a
-          href="https://github.com/DevOGee">DevOGee</a>.</span>
-    </footer>
+      <!-- Slide 3: Teaching -->
+      <section class="slide" id="slide-3">
+        <div class="chapter-heading">
+          <p class="chapter-label">CHAPTER II</p>
+          <h2>Instruction & Facilitation</h2>
+        </div>
+
+        <p>Instruction at OUK is a digital-first experience. Faculty are expected to maintain the highest standards of
+          course shell excellence.</p>
+
+        <h3>Pre-Teaching Validation</h3>
+        <p>Faculty must meticulously audit their assigned course shell for accuracy in content, hyperlink functionality,
+          and activity settings.</p>
+
+        <h3>Functional Requirements</h3>
+        <ul>
+          <li>Configuration of <strong>Zoom Live Class</strong> links within SOMAS.</li>
+          <li>Enabling the <strong>Panopto block</strong> for automatic session recording.</li>
+          <li>Setting strict <strong>Restriction Settings</strong> for assessments.</li>
+          <li>Defining <strong>Completion Tracking</strong> parameters.</li>
+        </ul>
+
+        <div class="editorial-note" style="border-left-color: #d32f2f; background-color: #fff5f5;">
+          <strong>STRICT POLICY</strong>
+          Deletion of institutional content is prohibited. All materials must remain within the SOMAS ecosystem.
+        </div>
+      </section>
+
+      <!-- Slide 4: Assessment -->
+      <section class="slide" id="slide-4">
+        <div class="chapter-heading">
+          <p class="chapter-label">CHAPTER III</p>
+          <h2>Assessment Guidelines</h2>
+        </div>
+
+        <p>The digital workflow for grading must be followed without exception to ensure institutional integrity.</p>
+
+        <h3>Gradebook Configuration</h3>
+        <ul>
+          <li>Weightings: <strong>CATTs (50%)</strong> and <strong>Final Examination (50%)</strong>.</li>
+          <li>All grading must occur within the LMS using rubrics.</li>
+        </ul>
+
+        <h3>Examinations</h3>
+        <ul>
+          <li>Preparation of dual examination versions (Mid & End of Session).</li>
+          <li>Secure LMS digitization and invigilation configuration.</li>
+          <li>Session moderation must be conducted <em>strictly</em> within the LMS.</li>
+        </ul>
+      </section>
+
+      <!-- Slide 5: Marks -->
+      <section class="slide" id="slide-5">
+        <div class="chapter-heading">
+          <p class="chapter-label">CHAPTER IV</p>
+          <h2>Marks Capture Process</h2>
+        </div>
+
+        <p>Official submission of marks is the final mandatory stage of the instructional cycle.</p>
+
+        <ol>
+          <li>Export current grades from the <strong>SOMAS Gradebook</strong>.</li>
+          <li>Access the <strong>MyOUK Examination Portal</strong>.</li>
+          <li>Input marks manually or via the <strong>Excel Bulk Upload</strong> template.</li>
+          <li>Generate the official <strong>Submission Report</strong> as proof.</li>
+        </ol>
+
+        <div class="editorial-note">
+          <strong>SUBMISSION PROOF</strong>
+          The Submission Report must be electronically shared with your Head of Department immediately upon completion.
+        </div>
+      </section>
+
+      <!-- Slide 6: Renewal -->
+      <section class="slide" id="slide-6">
+        <div class="chapter-heading">
+          <p class="chapter-label">CHAPTER V</p>
+          <h2>Maintenance & Evaluation</h2>
+        </div>
+
+        <p>Continuous pedagogical improvement is vital for our university's growth.</p>
+
+        <ul>
+          <li>Review student performance data and feedback.</li>
+          <li>Propose content updates for subsequent intakes.</li>
+          <li>Participate in post-session faculty reflection meetings.</li>
+        </ul>
+
+        <footer
+          style="margin-top: 4rem; text-align: center; border-top: 1px solid var(--border-sep); padding-top: 3rem;">
+          <p style="font-size: 0.9rem; opacity: 0.6;">&copy; 2026 The Open University of Kenya</p>
+          <p style="font-size: 0.7rem; opacity: 0.4; margin-top: 1rem;">Produced by the Digital Transformation Office
+            &bull; DevOGee</p>
+        </footer>
+      </section>
+
+      <!-- Navigation Footer -->
+      <footer class="nav-controls">
+        <button class="nav-btn" id="prev-btn" onclick="prevSlide()" disabled>
+          &larr; Back
+        </button>
+
+        <div class="chapter-info" id="slide-num">
+          Front Cover
+        </div>
+
+        <button class="nav-btn primary" id="next-btn" onclick="nextSlide()">
+          Next Chapter &rarr;
+        </button>
+      </footer>
+    </main>
   </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const nextBtn = document.getElementById('next-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const slideNumLabel = document.getElementById('slide-num');
+    const progressFill = document.getElementById('progress-fill');
+
+    function updateNav() {
+      // Update Slide View
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentSlide);
+      });
+
+      // Update Buttons
+      prevBtn.disabled = currentSlide === 0;
+
+      if (currentSlide === totalSlides - 1) {
+        nextBtn.innerHTML = 'Return to Cover';
+        nextBtn.classList.remove('primary');
+      } else if (currentSlide === 0) {
+        nextBtn.innerHTML = 'Open Handbook &rarr;';
+        nextBtn.classList.add('primary');
+      } else {
+        nextBtn.innerHTML = 'Next Chapter &rarr;';
+        nextBtn.classList.add('primary');
+      }
+
+      // Hide footer nav on cover for cleaner look (optional, but keep for now)
+      // document.querySelector('.nav-controls').style.display = currentSlide === 0 ? 'none' : 'flex';
+
+      // Update Labels
+      if (currentSlide === 0) {
+        slideNumLabel.innerText = "Title Page";
+      } else if (currentSlide === 1) {
+        slideNumLabel.innerText = "Table of Contents";
+      } else {
+        slideNumLabel.innerText = `Section ${currentSlide - 1} of ${totalSlides - 2}`;
+      }
+
+      // Update Progress
+      const progress = (currentSlide / (totalSlides - 1)) * 100;
+      progressFill.style.width = `${progress}%`;
+
+      // Scroll to top of container
+      window.scrollTo(0, 0);
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+      } else {
+        currentSlide = 0;
+      }
+      updateNav();
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateNav();
+      }
+    }
+
+    function goToSlide(n) {
+      currentSlide = n;
+      updateNav();
+    }
+
+    // Initialize keyboard nav
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+
+    updateNav();
+  </script>
 </body>
 
 </html>
-<!-- Force Rebuild: 2026-02-15 14:20 -->
