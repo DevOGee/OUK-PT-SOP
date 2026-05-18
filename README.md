@@ -30,7 +30,7 @@
 - Confirm assigned timetable slots.
   [[https://ouk.ac.ke/timetable]{.underline}](https://ouk.ac.ke/timetable)
 
-- Submit passport-size photo (official records & University profile).
+- [Submit passport-size photo](https://forms.gle/zqNP3ZPdAArBcmTN6) (official records & University profile).
 
 Outcome: Full system access before teaching begins.
 
