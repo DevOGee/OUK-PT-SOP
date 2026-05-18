@@ -119,3 +119,5 @@ Compliance with digital workflow is mandatory.
 No marks are considered submitted without system confirmation.
 
 ## **5. Preparing for a New Cohort**
+
+*✨ Coming soon with classy ICT, Dev Tech Design*
